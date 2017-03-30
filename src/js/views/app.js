@@ -42,8 +42,8 @@ $(function () {
                     url: app.nutritionix_searchUrl,
                     type: "GET",
                     data: {
-                        appId: NUTRITIONIX_ID,
-                        appKey: NUTRITIONIX_KEY
+                        appId: app.NUTRITIONIX_ID,
+                        appKey: app.NUTRITIONIX_KEY
                     }
                 }).done(function (data){
                     console.log(data);
