@@ -7,5 +7,5 @@ var app = app || {};
 
 // wrap within jQuery $
 $(function () {
-
+    new app.LibraryView();
 });

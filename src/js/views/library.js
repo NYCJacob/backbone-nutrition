@@ -10,7 +10,7 @@ app.LibraryView = Backbone.View.extend({
     template: _.template( $( '#searchResultsTemplate' ).html() ),
 
     events:{
-       'click #submitBtn': 'searchFood'
+       'click button#submitBtn': 'searchFood'
     },
 
     initialize:function () {
