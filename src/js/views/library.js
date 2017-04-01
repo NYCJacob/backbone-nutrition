@@ -14,7 +14,7 @@ app.LibraryView = Backbone.View.extend({
     },
 
     initialize:function () {
-        this.collection = new app.LibraryView();
+        this.collection = new app.LibCollection();
         this.$searchResults = $('#searchResults');
     },
 
