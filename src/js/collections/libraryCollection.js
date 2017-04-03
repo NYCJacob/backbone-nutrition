@@ -10,7 +10,7 @@ app.LibCollection = Backbone.Collection.extend({
 
     // Nutritionix API request
     url: function() {
-        return 'https://api.nutritionix.com/v1_1/search/' + this.searchPhrase;
+        return 'https://api.nutritionix.com/v1_1/search/' + this.searchTerm;
     },
 
     // custom parse needed otherwise fetch return complete raw response by default

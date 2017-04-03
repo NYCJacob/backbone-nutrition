@@ -10,15 +10,7 @@ var app = app || {};
 app.Food = Backbone.Model.extend({
 
     defaults: {
-        id: '',
-        sortOrder: 0,
-        name: '',
-        fat: 0,
-        carbs: 0,
-        protein: 0,
-        calories: 0,
-        servingSize: 0,
-        servingUnit: ''
+
     }
 
 });

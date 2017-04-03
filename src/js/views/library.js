@@ -16,17 +16,20 @@ app.LibraryView = Backbone.View.extend({
     initialize:function () {
         this.collection = new app.LibCollection();
         this.$searchResults = $('#searchResults');
+
+        this.listenTo( this.collection, 'reset', this.render );  // reset on fetch return will trigger render
     },
 
+    // render library by rendering each book in its collection
     render: function() {
         // Clear out old results
         this.$searchResults.html('');
 
-        this.$searchResults.html( this.template( this.collection.toJSON() ) );
-
-        return this;
-
+        this.collection.each(function( item ) {
+            console.log( item );
+        }, this );
     },
+
 
     searchFood: function (e) {
         e.preventDefault();
@@ -49,9 +52,10 @@ app.LibraryView = Backbone.View.extend({
 
         // Make GET request to Nutritionix
         this.collection.fetch({
+            reset: true,
             // see this post for passing param  http://stackoverflow.com/questions/6659283/backbone-js-fetch-with-parameters#6659501
             data: $.param(parameters),
-            success: this.searchSuccess,
+            // success: this.searchSuccess,
             error: this.searchError
         });
 
