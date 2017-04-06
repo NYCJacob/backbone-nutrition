@@ -27,9 +27,17 @@ app.LibraryView = Backbone.View.extend({
 
         this.collection.each(function( item ) {
             console.log( item );
+            this.renderFood(item)
         }, this );
     },
 
+    // render food item
+    renderFood: function( item ) {
+        var foodView = new app.FoodView({
+            model: item
+        });
+        this.$el.append( foodView.render().el );
+    },
 
     searchFood: function (e) {
         e.preventDefault();
@@ -51,11 +59,12 @@ app.LibraryView = Backbone.View.extend({
         };
 
         // Make GET request to Nutritionix
+        // Instead of using the success parameter to call a method,
+        // reset triggers the render method
         this.collection.fetch({
             reset: true,
             // see this post for passing param  http://stackoverflow.com/questions/6659283/backbone-js-fetch-with-parameters#6659501
             data: $.param(parameters),
-            // success: this.searchSuccess,
             error: this.searchError
         });
 
