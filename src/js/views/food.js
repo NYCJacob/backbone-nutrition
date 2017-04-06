@@ -9,28 +9,32 @@
 
 var app = app || {};
 
-app.FoodView = Backbone.View.extend({
-    el: '#searchResults',
+// wrap within jQuery $
+$(function () {
+    app.FoodView = Backbone.View.extend({
+        el: '#searchResults',
 
-    className: 'foodContainer',
-    template: _.template( $( '#foodTemplate' ).html() ),
+        className: 'foodContainer',
+        template: _.template($('#foodTemplate').html()),
 
-    events: {
-        'click .save': 'saveFood'
-    },
+        events: {
+            'click .save': 'saveFood'
+        },
 
-    deleteFood: function() {
-        //Delete model
-        this.model.destroy();
+        deleteFood: function () {
+            //Delete model
+            this.model.destroy();
 
-        //Delete view
-        this.remove();
-    },
+            //Delete view
+            this.remove();
+        },
 
-    render: function() {
-        //this.el is what we defined in tagName. use $el to get access to jQuery html() function
-        this.$el.html( this.template( this.model.attributes ) );
+        render: function () {
+            //this.el is what we defined in tagName. use $el to get access to jQuery html() function
+            this.$el.html(this.template(this.model.attributes));
 
-        return this;
-    }
+            return this;
+        }
+    });
+
 });

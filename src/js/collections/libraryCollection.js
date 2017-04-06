@@ -3,7 +3,10 @@
  */
 var app = app || {};
 
-app.LibCollection = Backbone.Collection.extend({
+// wrap within jQuery $
+$(function () {
+
+    app.LibCollection = Backbone.Collection.extend({
    model: app.Food,
 
     searchTerm: '',
@@ -18,5 +21,7 @@ app.LibCollection = Backbone.Collection.extend({
         return response.hits; // hits is object needed in api response
     }
 
+
+});
 
 });
