@@ -31,7 +31,7 @@ $(function () {
 
         render: function () {
             //this.el is what we defined in tagName. use $el to get access to jQuery html() function
-            this.$el.html(this.template(this.model.attributes));
+            this.$el.html(this.template(this.model.attributes.fields));
 
             return this;
         }
