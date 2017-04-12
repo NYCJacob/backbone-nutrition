@@ -50,14 +50,13 @@
 
 <!--underscore templates for views-->
 <script id="foodTemplate" type="text/template">
-    <h3> <%= item_name %> </h3>
+    <h3> Item Name <%= item_name %> </h3>
     <ul>
-        <li> <%= nf_calories %> </li>
-        <li> <%= nf_total_fat %> </li>
-        <li> <%= nf_total_carbohydrate %> </li>
-        <li> <%= nf_protein %> </li>
-        <li> <%= nf_serving_size_qty %> </li>
-        <li> <%= nf_serving_size_unit %> </li>
+        <li>Calories: <%= nf_calories %> </li>
+        <li>Total Fat <%= nf_total_fat %> </li>
+        <li>Carbohydrates <%= nf_total_carbohydrate %> </li>
+        <li>Protein <%= nf_protein %> </li>
+        <li>Serving Size <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
     </ul>
 </script>
 

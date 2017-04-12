@@ -12,8 +12,8 @@ var app = app || {};
 // wrap within jQuery $
 $(function () {
     app.FoodView = Backbone.View.extend({
-        el: '#searchResults',
-
+        // el: '#searchResults',
+        tagName: 'div',
         className: 'foodContainer',
         template: _.template($('#foodTemplate').html()),
 
@@ -32,6 +32,7 @@ $(function () {
         render: function () {
             // use $el to get access to jQuery html() function
             this.$el.html(this.template(this.model.attributes.fields));
+            // this.template(this.model.attributes.fields);
 
             return this;
         }

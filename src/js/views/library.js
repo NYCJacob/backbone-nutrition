@@ -36,7 +36,9 @@ $(function () {
             var foodView = new app.FoodView({
                 model: item
             });
-            this.$el.append(foodView.render().el);
+            // this.$el.append(foodView.render().el);
+            // $('#searchResults').append(foodView.render().el);
+            $('#searchResults').append(foodView.render().el);
         },
 
         searchFood: function (e) {
