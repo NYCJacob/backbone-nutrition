@@ -18,7 +18,15 @@ $(function () {
         template: _.template($('#foodTemplate').html()),
 
         events: {
-            'click .save': 'saveFood'
+            'click .add-food': 'addFood'
+        },
+
+        addFood: function (e) {
+            e.preventDefault();
+            console.log('addFood event' + '\n');
+            var foodData = this.model;
+            console.log(foodData);
+
         },
 
         deleteFood: function () {
