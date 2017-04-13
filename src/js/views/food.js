@@ -45,7 +45,6 @@ $(function () {
         render: function () {
             // use $el to get access to jQuery html() function
             this.$el.html(this.template(this.model.attributes.fields));
-            // this.template(this.model.attributes.fields);
 
             return this;
         }

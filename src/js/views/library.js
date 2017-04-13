@@ -7,7 +7,8 @@ var app = app || {};
 // wrap within jQuery $
 $(function () {
     app.LibraryView = Backbone.View.extend({
-        el: '#search-view',
+        // el: '#search-view',
+        el: '#app-view',
 
         events: {
             'click button#submitBtn': 'searchFood'
@@ -37,7 +38,6 @@ $(function () {
                 model: item
             });
             // this.$el.append(foodView.render().el);
-            // $('#searchResults').append(foodView.render().el);
             $('#searchResults').append(foodView.render().el);
         },
 
