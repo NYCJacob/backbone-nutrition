@@ -26,6 +26,10 @@ $(function () {
             console.log('addFood event' + '\n');
             var foodData = this.model;
             console.log(foodData);
+            var savedFoodView = new app.SavedFoodsView({
+                model: foodData
+            });
+            this.$('#saved-items').append(savedFoodView.render())
 
         },
 

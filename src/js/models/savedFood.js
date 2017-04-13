@@ -6,9 +6,7 @@
  */
 var app = app || {};
 
-// SEARCH MODEL
-// -------------
-//
+// this is identical to food model
 
 app.savedFood = Backbone.Model.extend({
 
