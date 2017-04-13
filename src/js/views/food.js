@@ -29,8 +29,9 @@ $(function () {
             var savedFoodView = new app.SavedFoodsView({
                 model: foodData
             });
-            this.$('#saved-items').append(savedFoodView.render())
-
+            // this.$('#saved-items').append(savedFoodView.render());
+            // savedFoodView.setElement($('#saved-items'));
+            savedFoodView.render();
         },
 
         deleteFood: function () {

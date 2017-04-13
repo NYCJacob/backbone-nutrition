@@ -7,6 +7,9 @@ var app = app || {};
 $(function () {
     app.SavedFoodsView = Backbone.View.extend({
         el: '#saved-items',
+        // tagName: 'div',
+
+        template: _.template( $( '#savedFoodTemplate' ).html() ),
 
         events: {
             'click button#delete': 'deleteFood'
@@ -20,6 +23,7 @@ $(function () {
         // render library by rendering each book in its collection
         render: function () {
             console.log('savedFoodsView render');
+            this.$el.html( this.template( this.model.attributes.fields ) );
             return this;
         }
     });
