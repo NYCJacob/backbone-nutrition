@@ -13,7 +13,7 @@ $(function () {
         template: _.template( $( '#savedFoodTemplate' ).html() ),
 
         events: {
-            'click button#delete': 'deleteFood'
+            'click .delete-food': 'deleteFood'
         },
 
         initialize: function () {
@@ -24,12 +24,19 @@ $(function () {
         // render library by rendering each book in its collection
         render: function () {
             console.log('savedFoodsView render');
-            console.log(this.model.attributes);
-            console.log(this.template);
-            console.log(this.el);
 
+            // $( '#saved-items' ).append( this.template( this.model.attributes.fields ) );
             this.$el.append( this.template( this.model.attributes.fields ) );
             return this;
+        },
+
+        deleteFood: function() {
+            console.log('deleteFood hit');
+            //Delete model
+            this.model.destroy();
+
+            //Delete view
+            this.remove();
         }
     });
 });

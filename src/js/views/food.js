@@ -18,8 +18,7 @@ $(function () {
         template: _.template($('#foodTemplate').html()),
 
         events: {
-            'click .add-food': 'addFood',
-            'click button#saveFoodBtn' : 'saveFood'
+            'click .add-food': 'addFood'
         },
 
         addFood: function (e) {
