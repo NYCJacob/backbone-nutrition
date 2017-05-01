@@ -18,7 +18,8 @@ $(function () {
         template: _.template($('#foodTemplate').html()),
 
         events: {
-            'click .add-food': 'addFood'
+            'click .add-food': 'addFood',
+            'click button#saveFoodBtn' : 'saveFood'
         },
 
         addFood: function (e) {
@@ -26,20 +27,13 @@ $(function () {
             console.log('addFood event' + '\n');
             var foodData = this.model;
             console.log(foodData);
+            console.log(this.el);
             var savedFoodView = new app.SavedFoodsView({
                 model: foodData
             });
             // this.$('#saved-items').append(savedFoodView.render());
             // savedFoodView.setElement($('#saved-items'));
             savedFoodView.render();
-        },
-
-        deleteFood: function () {
-            //Delete model
-            this.model.destroy();
-
-            //Delete view
-            this.remove();
         },
 
         render: function () {

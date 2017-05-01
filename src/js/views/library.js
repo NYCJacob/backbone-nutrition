@@ -38,7 +38,8 @@ $(function () {
                 model: item
             });
             // this.$el.append(foodView.render().el);
-            $('#searchResults').append(foodView.render().el);
+            // $('#searchResults').append(foodView.render().el);
+            this.$searchResults.append(foodView.render().el);
         },
 
         searchFood: function (e) {
