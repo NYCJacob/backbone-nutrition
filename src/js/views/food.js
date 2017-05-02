@@ -23,13 +23,20 @@ $(function () {
 
         addFood: function (e) {
             e.preventDefault();
-            console.log('addFood event' + '\n');
+            // console.log('addFood event' + '\n');
             var foodData = this.model;
             console.log(foodData);
             console.log(this.el);
-            var savedFoodView = new app.SavedFoodsView({
-                model: foodData
-            });
+            // save food to saved food collection and leave rendering to
+            // be handled by savedLibraryView
+            app.savedCollection.set(foodData, {remove: false});
+            console.log(app.savedCollection);
+
+            //  below is original
+            // var savedFoodView = new app.SavedFoodsView({
+            //     model: foodData
+            // });
+            //
             // this.$('#saved-items').append(savedFoodView.render());
             // savedFoodView.setElement($('#saved-items'));
 

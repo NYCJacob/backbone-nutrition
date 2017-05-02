@@ -7,5 +7,8 @@ var app = app || {};
 
 // wrap within jQuery $
 $(function () {
-    new app.LibraryView();
+    // initialize collections
+    new app.LibraryView();  // collection to hold fetch results
+    app.savedCollection = new app.SavedCollection();  // collection to hold user saved items
+
 });

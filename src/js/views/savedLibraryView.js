@@ -14,6 +14,7 @@ $(function () {
         },
 
         initialize: function () {
+            //TODO: need to set collection to var to allow foods view to set food model to this collection
             this.collection = new app.savedCollection();
             this.listenTo(this.collection, 'reset', this.render);  // reset will trigger render
         },

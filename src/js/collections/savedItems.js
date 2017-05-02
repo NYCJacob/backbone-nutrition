@@ -6,7 +6,7 @@ var app = app || {};
 // wrap within jQuery $
 $(function () {
 
-    app.savedCollection = Backbone.Collection.extend({
+    app.SavedCollection = Backbone.Collection.extend({
         model: app.savedFood,
 
         /** Save food item to localStorage. */
