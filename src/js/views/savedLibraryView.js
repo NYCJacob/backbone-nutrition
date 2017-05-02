@@ -13,12 +13,10 @@ $(function () {
         },
 
         initialize: function () {
-            //TODO: need to set collection to var to allow foods view to set food model to this collection
             // this.collection = new app.savedCollection();
-            this.collection = app.savedCollection;   // savedCollection initialized in app.js
-            this.listenTo(app.savedCollection, 'add', this.render);
-            this.listenTo(this.collection, 'update', this.render);
-            this.listenTo(this.collection, 'change', this.render);
+            // this.collection = app.savedCollection;   // savedCollection initialized in app.js
+            this.listenTo(app.savedCollection, 'add update change', this.render);
+
         },
 
         // render library by rendering each book in its collection
@@ -31,7 +29,7 @@ $(function () {
 
         // render food item
         renderSavedFood: function (item) {
-            var savedFoodView = new savedFoodView({
+            var savedFoodView = new SavedFoodView({
                 model: item
             });
             this.$el.append(savedFoodView.render().el);

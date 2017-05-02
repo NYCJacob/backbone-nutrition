@@ -9,6 +9,7 @@ var app = app || {};
 $(function () {
     // initialize collections
     new app.LibraryView();  // collection to hold fetch results
+    // app.savedCollection = new app.SavedCollection();  // collection to hold user saved items
     app.savedCollection = new app.SavedCollection();  // collection to hold user saved items
 
 });
