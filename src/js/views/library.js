@@ -23,9 +23,6 @@ $(function () {
 
         // render library by rendering each book in its collection
         render: function () {
-            // Clear out old results
-            // this.$searchResults.html('');
-
             this.collection.each(function (item) {
                 console.log(item);
                 this.renderFood(item);

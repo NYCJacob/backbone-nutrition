@@ -25,11 +25,12 @@ $(function () {
             e.preventDefault();
             // console.log('addFood event' + '\n');
             var foodData = this.model;
-            console.log(foodData);
-            console.log(this.el);
+            // console.log(foodData);
+            // console.log(this.el);
+
             // save food to saved food collection and leave rendering to
             // be handled by savedLibraryView
-            app.savedCollection.set(foodData, {remove: false});
+            app.savedCollection.add(foodData, {merge: true});
             console.log(app.savedCollection);
 
             //  below is original

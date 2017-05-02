@@ -5,7 +5,7 @@ var app = app || {};
 
 // wrap within jQuery $
 $(function () {
-    app.SavedFoodsView = Backbone.View.extend({
+    app.SavedFoodView = Backbone.View.extend({
         // el: '#saved-items',
         tagName: 'div',
         className: 'saved-foods',
