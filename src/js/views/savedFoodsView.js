@@ -6,9 +6,9 @@ var app = app || {};
 // wrap within jQuery $
 $(function () {
     app.SavedFoodsView = Backbone.View.extend({
-        el: '#saved-items',
-        // tagName: 'div',
-        // className: 'saved-foods',
+        // el: '#saved-items',
+        tagName: 'div',
+        className: 'saved-foods',
 
         template: _.template( $( '#savedFoodTemplate' ).html() ),
 
@@ -16,17 +16,12 @@ $(function () {
             'click .delete-food': 'deleteFood'
         },
 
-        initialize: function () {
-            this.collection = new app.savedCollection();
-            this.listenTo(this.collection, 'reset', this.render);  // reset will trigger render
-        },
-
         // render library by rendering each book in its collection
         render: function () {
             console.log('savedFoodsView render');
+            // this.$el.append( this.template( this.model.attributes.fields ) );
+            this.$el.html(this.template(this.model.attributes.fields));
 
-            // $( '#saved-items' ).append( this.template( this.model.attributes.fields ) );
-            this.$el.append( this.template( this.model.attributes.fields ) );
             return this;
         },
 
@@ -34,7 +29,7 @@ $(function () {
             console.log('deleteFood hit');
             //Delete model
             this.model.destroy();
-
+            console.log(this);
             //Delete view
             this.remove();
         }

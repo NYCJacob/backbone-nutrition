@@ -32,7 +32,8 @@ $(function () {
             });
             // this.$('#saved-items').append(savedFoodView.render());
             // savedFoodView.setElement($('#saved-items'));
-            savedFoodView.render();
+
+            // savedFoodView.render();
         },
 
         render: function () {
