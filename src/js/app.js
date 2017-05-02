@@ -12,4 +12,9 @@ $(function () {
     // app.savedCollection = new app.SavedCollection();  // collection to hold user saved items
     app.savedCollection = new app.SavedCollection();  // collection to hold user saved items
 
+    // debug code
+    app.savedCollection.on('all',function(eventName) {
+        console.log(eventName);
+    });
+
 });

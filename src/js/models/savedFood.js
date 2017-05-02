@@ -8,7 +8,7 @@ var app = app || {};
 
 // this is identical to food model
 
-app.savedFood = Backbone.Model.extend({
+app.SavedFood = Backbone.Model.extend({
 
     defaults: {
         item_name : '',
@@ -17,7 +17,8 @@ app.savedFood = Backbone.Model.extend({
         nf_total_carbohydrate : '',
         nf_protein : '',
         nf_serving_size_qty : '',
-        nf_serving_size_unit : ''
+        nf_serving_size_unit : '',
+        meal_type : ''
     }
 
 });

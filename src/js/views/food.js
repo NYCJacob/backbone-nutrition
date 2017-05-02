@@ -24,24 +24,14 @@ $(function () {
         addFood: function (e) {
             e.preventDefault();
             // console.log('addFood event' + '\n');
-            var foodData = this.model;
             // console.log(foodData);
             // console.log(this.el);
 
             // save food to saved food collection and leave rendering to
             // be handled by savedLibraryView
-            app.savedCollection.add(foodData, {merge: true});
+            app.savedCollection.add(this.model.attributes.fields, {merge: true});
             console.log(app.savedCollection);
 
-            //  below is original
-            // var savedFoodView = new app.SavedFoodsView({
-            //     model: foodData
-            // });
-            //
-            // this.$('#saved-items').append(savedFoodView.render());
-            // savedFoodView.setElement($('#saved-items'));
-
-            // savedFoodView.render();
         },
 
         render: function () {

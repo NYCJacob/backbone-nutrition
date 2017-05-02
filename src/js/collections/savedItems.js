@@ -7,10 +7,10 @@ var app = app || {};
 $(function () {
 
     app.SavedCollection = Backbone.Collection.extend({
-        model: app.savedFood,
+        model: app.SavedFood,
 
         /** Save food item to localStorage. */
-        localStorage: new Backbone.LocalStorage('savedFoodItems'),
+        localStorage: new Backbone.LocalStorage('savedFoodItems')
 
     });
 

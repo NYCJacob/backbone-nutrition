@@ -6,4 +6,4 @@ currently all files are in src/ and you need to load index.html on a server.  A 
 results in the results div.
 
 ## Issues
-- render does not seem to append each item in the collection.foreach loop
+- saved items collection render not working
