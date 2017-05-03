@@ -9,20 +9,24 @@ $(function () {
     app.SavedLibraryView = Backbone.View.extend({
         el: '#saved-items',
 
+        collection: app.savedCollection,
+
         events: {
         },
 
         initialize: function () {
+            this.render();
             // this.collection = new app.savedCollection();
             // this.collection = app.savedCollection;   // savedCollection initialized in app.js
-            this.listenTo(app.savedCollection, 'add update change', this.render);
+            this.listenTo(this.collection, 'add update change', this.render);
+            app.savedCollection.on('add', this.render);
 
         },
 
         // render library by rendering each book in its collection
         render: function () {
             console.log('savedLibraryView render');
-            this.collection.each(function (item) {
+            app.savedCollection.each(function (item) {
                 this.renderSavedFood(item);
             }, this);
         },

@@ -1,9 +1,7 @@
 /**
  * Created by jsherman on 4/12/17.
  */
-/**
- * Created by jsherman on 3/30/17.
- */
+
 var app = app || {};
 
 // this is identical to food model

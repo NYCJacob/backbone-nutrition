@@ -24,7 +24,7 @@ $(function () {
         // render library by rendering each book in its collection
         render: function () {
             this.collection.each(function (item) {
-                console.log(item);
+                // console.log(item);
                 this.renderFood(item);
             }, this);
         },
