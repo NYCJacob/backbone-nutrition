@@ -25,14 +25,14 @@ $(function () {
 
         // render library by rendering each book in its collection
         render: function () {
-            console.log('savedLibraryView render');
+            // console.log('savedLibraryView render');
             app.savedCollection.each(function (item) {
-                this.renderSavedFood(item);
+                this.renderSaved(item);
             }, this);
         },
 
         // render food item
-        renderSavedFood: function (item) {
+        renderSaved: function (item) {
             var savedFoodView = new SavedFoodView({
                 model: item
             });
