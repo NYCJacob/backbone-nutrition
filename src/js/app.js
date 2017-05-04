@@ -13,7 +13,7 @@ $(function () {
 
     // initialize views
     new app.LibraryView();  // collection to hold fetch results
-    app.savedLibraryView = new app.SavedLibraryView();
+    app.savedLibraryView = new app.SavedLibraryView({collection: app.savedCollection});
 
 
     // debug code
