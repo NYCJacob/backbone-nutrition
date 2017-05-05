@@ -28,8 +28,8 @@ $(function () {
             // var savedFoodModel = this.model.clone();
             //
             // TODO: there should be a better way to do this,  I tried .clone but didn't work
-
-            // app.savedCollection.add( new app.SavedFood( foodFields ), {merge: true});
+            console.log(this.model);
+            this.model.set({'meal_type': 'meal type'});
             app.savedCollection.add( this.model, {merge: true});
 
             console.log(app.savedCollection);
