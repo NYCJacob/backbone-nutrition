@@ -31,7 +31,10 @@ $(function () {
 
             // var savedFood = new app.SavedFood();
             var foodFields = this.model.attributes.fields;
+            var savedFoodModel = this.model.clone();
+
             console.log(foodFields);
+            console.log(savedFoodModel);
             // TODO: there should be a better way to do this,  I tried .clone but didn't work
             // iterate over this.model fields
             // for (var key in foodFields){
