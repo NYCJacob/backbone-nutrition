@@ -19,7 +19,7 @@ $(function () {
             // this.collection = new app.savedCollection();
             // this.collection = app.savedCollection;   // savedCollection initialized in app.js
 
-            this.listenTo(this.collection, 'add', this.render);
+            this.listenTo(this.collection, 'add update change', this.render);
             // app.savedCollection.on('add', this.render);
 
         },

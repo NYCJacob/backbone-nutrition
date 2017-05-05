@@ -23,13 +23,23 @@ $(function () {
 
         addFood: function (e) {
             e.preventDefault();
-            // console.log('addFood event' + '\n');
             // console.log(foodData);
-            // console.log(this.el);
 
             // save food to saved food collection and leave rendering to
             // be handled by savedLibraryView
-            app.savedCollection.add(this.model.attributes.fields, {merge: true});
+            // app.savedCollection.add(this.model.attributes.fields, {merge: true});
+            var savedFood = new app.SavedFood();
+            var foodFields = this.model.attributes.fields;
+            console.log(foodFields);
+            // TODO: there should be a better way to do this,  I tried .clone but didn't work
+            // iterate over this.model fields
+            for (var key in foodFields){
+                savedFood.attributes[ key ] = foodFields[key];
+            }
+            console.log(savedFood);
+
+            app.savedCollection.add(savedFood, {merge: true});
+
             console.log(app.savedCollection);
 
         },
