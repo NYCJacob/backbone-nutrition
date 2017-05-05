@@ -28,6 +28,7 @@ $(function () {
         render: function () {
             console.log('savedLibraryView render');
             // this.collection = app.savedCollection;
+            this.$el.html("");
             this.collection.forEach(function (item) {
             // app.savedCollection.each(function (item) {
                 this.renderSaved(item);
