@@ -32,7 +32,6 @@ $(function () {
 
             app.savedCollection.add( this.model, {merge: true});
             this.model.save();
-
             console.log(app.savedCollection);
 
         },
