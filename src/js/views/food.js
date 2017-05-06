@@ -31,6 +31,7 @@ $(function () {
             console.log(this.model);
 
             app.savedCollection.add( this.model, {merge: true});
+            this.model.save();
 
             console.log(app.savedCollection);
 

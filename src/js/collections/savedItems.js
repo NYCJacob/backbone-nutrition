@@ -10,7 +10,7 @@ $(function () {
         model: app.SavedFood,
 
         /** Save food item to localStorage. */
-        localStorage: new Backbone.LocalStorage('savedFoodItems')
+        localStorage: new Backbone.LocalStorage('stored-foods')
 
     });
 
