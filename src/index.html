@@ -58,25 +58,25 @@
 
 <!--underscore templates for views-->
 <script id="foodTemplate" type="text/template">
-    <h3> Item Name <%= item_name %> </h3>
+    <h3> Item Name <%= fields.item_name %> </h3>
     <ul>
-        <li>Calories: <%= nf_calories %> </li>
-        <li>Total Fat <%= nf_total_fat %> </li>
-        <li>Carbohydrates <%= nf_total_carbohydrate %> </li>
-        <li>Protein <%= nf_protein %> </li>
-        <li>Serving Size <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
+        <li>Calories: <%= fields.nf_calories %> </li>
+        <li>Total Fat <%= fields.nf_total_fat %> </li>
+        <li>Carbohydrates <%= fields.nf_total_carbohydrate %> </li>
+        <li>Protein <%= fields.nf_protein %> </li>
+        <li>Serving Size <%= fields.nf_serving_size_qty %> <%= fields.nf_serving_size_unit %></li>
     </ul>
     <button class="add-food">Add Food</button>
 </script>
 
 <script id="savedFoodTemplate" type="text/template">
-    <h3> Item Name <%= item_name %> </h3>
+    <h3> Item Name <%= fields.item_name %> </h3>
     <ul>
-        <li>Calories: <%= nf_calories %> </li>
-        <li>Total Fat <%= nf_total_fat %> </li>
-        <li>Carbohydrates <%= nf_total_carbohydrate %> </li>
-        <li>Protein <%= nf_protein %> </li>
-        <li>Serving Size <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
+        <li>Calories: <%= fields.nf_calories %> </li>
+        <li>Total Fat <%= fields.nf_total_fat %> </li>
+        <li>Carbohydrates <%= fields.nf_total_carbohydrate %> </li>
+        <li>Protein <%= fields.nf_protein %> </li>
+        <li>Serving Size <%= fields.nf_serving_size_qty %> <%= fields.nf_serving_size_unit %></li>
         <li>Meal Type: <%= meal_type %> </li>
     </ul>
     <button class="delete-food">Delete</button>

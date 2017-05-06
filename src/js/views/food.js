@@ -29,7 +29,7 @@ $(function () {
             //
             // TODO: there should be a better way to do this,  I tried .clone but didn't work
             console.log(this.model);
-            this.model.set({'meal_type': 'meal type'});
+
             app.savedCollection.add( this.model, {merge: true});
 
             console.log(app.savedCollection);
@@ -38,7 +38,7 @@ $(function () {
 
         render: function () {
             // use $el to get access to jQuery html() function
-            this.$el.html(this.template(this.model.attributes.fields));
+            this.$el.html(this.template(this.model.attributes));
 
             return this;
         }
