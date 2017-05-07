@@ -21,7 +21,7 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Find Fine Foods</a>
+    <a class="navbar-brand" href="#">Find Fit Foods</a>
 
 
 </nav>
@@ -29,13 +29,48 @@
 <div class="container-fluid" id="app-view">
 
     <div class="row" id="search-view">
-        <form id="search-request">
-            <div class="form-group">
-                <label for="search-terms">Enter Search Terms</label>
-                <textarea name="searchTerms" id="search-terms" cols="30" rows="2"></textarea>
-            </div>
-            <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
-        </form>
+        <div class="col-md-4">
+            <form id="search-request">
+                <div class="form-group">
+                    <label for="search-terms">Enter Search Terms</label>
+                    <textarea name="searchTerms" id="search-terms" cols="20" rows="1"></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <h4>BMI Calculator</h4>
+            <form id="bmi-search">
+                <div class="form-group">
+                    <label for="bmi-height">Enter Height (inches)</label>
+                    <input type="text" name="bmiHeight" id="bmi-height"></input>
+                </div>
+                <div class="form-group">
+                    <label for="bmi-weight">Enter Weight (pounds)</label>
+                    <input type="text" name="bmiWeight" id="bmi-weight"></input>
+                </div>
+                <button type="submit" id="submitBMI" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <h4>Life Expectancy</h4>
+            <form id="life-search">
+                <div class="form-group">
+                    <label for="life-age">Enter Age</label>
+                    <input type="number" name="lifeAge" id="life-age"></input>
+                </div>
+                <div class="form-group">
+                    <label for="life-gender">Choose Gender</label>
+                    <select id="life-gender" form="life-search">
+                        <option value="M">Male</option>
+                        <option value="F" selected>Female</option>
+                    </select>
+                </div>
+                <button type="submit" id="submitLife" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+
     </div>
     <div class="row">
         <div class="col-md-6">
