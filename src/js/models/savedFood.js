@@ -12,8 +12,10 @@ app.SavedFood = Backbone.Model.extend({
         savedDate: new Date().toISOString(),
         userID: '',
         food : {
-            //id is from nutrinix api result
-            id: '',
+            //item_id is from nutrinix api result
+            item_id: '',
+            brand_name: '',
+            upc: '',
             item_name : '',
             nf_calories : '',
             nf_total_fat : '',

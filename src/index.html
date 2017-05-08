@@ -86,7 +86,8 @@
 
 <!--underscore templates for views-->
 <script id="foodTemplate" type="text/template">
-    <h3> Item Name <%= fields.item_name %> </h3>
+    <h3> <%= fields.item_name %> </h3>
+    <h4> Brand:  <%= fields.brand_name %> </h4>
     <ul>
         <li>Calories: <%= fields.nf_calories %> </li>
         <li>Total Fat <%= fields.nf_total_fat %> </li>

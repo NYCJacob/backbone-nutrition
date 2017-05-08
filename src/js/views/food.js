@@ -25,7 +25,7 @@ $(function () {
             e.preventDefault();
             //
             // TODO: there should be a better way to do this,  I tried .clone but didn't work
-           // console.log(this.model);
+           console.log(this.model);
 
             // app.savedCollection.add( this.model, {merge: true});
             // app.savedCollection.create({
@@ -42,6 +42,9 @@ $(function () {
             // });
 
             var clickedFood = {
+                item_id : this.model.attributes.fields.item_id,
+                brand_name : this.model.attributes.fields.brand_name,
+                upc : this.model.attributes.fields.upc,
                 item_name : this.model.attributes.fields.item_name,
                 nf_calories : this.model.attributes.fields.nf_calories,
                 nf_total_fat : this.model.attributes.fields.nf_total_fat,
@@ -60,6 +63,7 @@ $(function () {
 
         render: function () {
             // use $el to get access to jQuery html() function
+            console.log( this.model );
             this.$el.html(this.template(this.model.attributes));
 
             return this;
@@ -67,3 +71,5 @@ $(function () {
     });
 
 });
+
+

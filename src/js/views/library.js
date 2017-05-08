@@ -43,19 +43,22 @@ $(function () {
             this.collection.searchTerm = $('#search-terms').val();
 
             var parameters = {
-                'results': '0:10', // 10 items
-                'fields': 'item_name,' +
-                'nf_calories,' +
-                'nf_total_fat,' +
-                'nf_total_carbohydrate,' +
-                'nf_protein,' +
-                'nf_serving_size_qty,' +
-                'nf_serving_size_unit',
-                'appId': '21a44b1b',
-                'appKey': 'c306b7fb48fd92654d48050c1ad5f58a'
+                'results': '0:12', // 10 items
+                'fields':  'item_id,' +
+                    'brand_name,' +
+                    // 'upc,' +    upc is a one-way search does not get returned
+                    'item_name,' +
+                    'nf_calories,' +
+                    'nf_total_fat,' +
+                    'nf_total_carbohydrate,' +
+                    'nf_protein,' +
+                    'nf_serving_size_qty,' +
+                    'nf_serving_size_unit',
+                    'appId': '21a44b1b',
+                    'appKey': 'c306b7fb48fd92654d48050c1ad5f58a'
             };
 
-            // Make GET request to Nutritionix
+                // Make GET request to Nutritionix
             // Instead of using the success parameter to call a method,
             // reset triggers the render method
             this.collection.fetch({
