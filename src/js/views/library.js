@@ -23,6 +23,8 @@ $(function () {
 
         // render library by rendering each book in its collection
         render: function () {
+            // clear prior results
+            this.$searchResults.html('');
             this.collection.each(function (item) {
                 // console.log(item);
                 this.renderFood(item);
@@ -39,6 +41,7 @@ $(function () {
 
         searchFood: function (e) {
             e.preventDefault();
+
             // sets search term in collect for fetch
             this.collection.searchTerm = $('#search-terms').val();
 
@@ -68,8 +71,6 @@ $(function () {
                 error: this.searchError
             });
 
-            // clear form data
-            // TODO clear form when needed
         },
 
         searchSuccess: function () {
