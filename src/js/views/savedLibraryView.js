@@ -21,7 +21,7 @@ $(function () {
             // this.collection = app.savedCollection;   // savedCollection initialized in app.js
             //TODO: not sure why this.collection seems to work when collection: not in constructor
             this.listenTo(this.collection, 'add update change', this.render);
-
+            this.collection.fetch();
         },
 
         // render library by rendering each book in its collection
