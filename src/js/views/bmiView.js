@@ -51,10 +51,13 @@ $(function () {
                     // xhr.setRequestHeader("X-Mashape-Authorization", "Nzn548SCl8mshyrCNNESZSV21Z8Tp1WXG8ojsn5nVLLUM88cJr");
                     xhr.setRequestHeader("X-Mashape-Authorization", "9Q2PQEr5DGmsh7Z3MtZSf4kjEOByp1IvpWajsnkN3LT1dwrFE5");
                 },
-                data: JSON.stringify(urlData),
-                done: function(data) { console.log(data); },
-                fail: function(err) { alert(err); }
-            })
+                data: JSON.stringify(urlData)
+            }).done(function( data ){
+                // data is a json object returned from api
+                //TODO: need to set to model and that will trigger view render
+
+
+            })  // done promise
         },
 
         searchSuccess: function () {
