@@ -27,8 +27,33 @@ $(function () {
             // TODO: there should be a better way to do this,  I tried .clone but didn't work
            // console.log(this.model);
 
-            app.savedCollection.add( this.model, {merge: true});
-            this.model.save();
+            // app.savedCollection.add( this.model, {merge: true});
+            // app.savedCollection.create({
+            //     food: {
+            //         item_name : this.model.attributes.fields.item_name,
+            //         nf_calories : this.model.attributes.fields.nf_calories,
+            //         nf_total_fat : this.model.attributes.fields.nf_total_fat,
+            //         nf_total_carbohydrate : this.model.attributes.fields.nf_total_carbohydrate,
+            //         nf_protein : this.model.attributes.fields.nf_protein,
+            //         nf_serving_size_qty : this.model.attributes.fields.nf_serving_size_qty,
+            //         nf_serving_size_unit : this.model.attributes.fields.nf_serving_size_unit,
+            //         meal_type: 'unknown'
+            //     }
+            // });
+
+            var clickedFood = {
+                item_name : this.model.attributes.fields.item_name,
+                nf_calories : this.model.attributes.fields.nf_calories,
+                nf_total_fat : this.model.attributes.fields.nf_total_fat,
+                nf_total_carbohydrate : this.model.attributes.fields.nf_total_carbohydrate,
+                nf_protein : this.model.attributes.fields.nf_protein,
+                nf_serving_size_qty : this.model.attributes.fields.nf_serving_size_qty,
+                nf_serving_size_unit : this.model.attributes.fields.nf_serving_size_unit,
+                meal_type: 'unknown'
+            };
+
+            app.savedLibraryView.saveFood(clickedFood);
+
             // console.log(app.savedCollection);
 
         },

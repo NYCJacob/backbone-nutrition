@@ -7,7 +7,7 @@ var app = app || {};
 $(function () {
 
     app.LibCollection = Backbone.Collection.extend({
-        model: app.Food,
+        model: app.SavedFood,
 
         searchTerm: '',
 

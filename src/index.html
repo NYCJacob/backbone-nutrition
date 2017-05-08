@@ -98,14 +98,14 @@
 </script>
 
 <script id="savedFoodTemplate" type="text/template">
-    <h3> Item Name <%= fields.item_name %> </h3>
+    <h3> Item Name <%= food.item_name %> </h3>
     <ul>
-        <li>Calories: <%= fields.nf_calories %> </li>
-        <li>Total Fat <%= fields.nf_total_fat %> </li>
-        <li>Carbohydrates <%= fields.nf_total_carbohydrate %> </li>
-        <li>Protein <%= fields.nf_protein %> </li>
-        <li>Serving Size <%= fields.nf_serving_size_qty %> <%= fields.nf_serving_size_unit %></li>
-        <li>Meal Type: <%= meal_type %> </li>
+        <li>Calories: <%= food.nf_calories %> </li>
+        <li>Total Fat <%= food.nf_total_fat %> </li>
+        <li>Carbohydrates <%= food.nf_total_carbohydrate %> </li>
+        <li>Protein <%= food.nf_protein %> </li>
+        <li>Serving Size <%= food.nf_serving_size_qty %> <%= food.nf_serving_size_unit %></li>
+        <li>Meal Type: <%= food.meal_type %> </li>
     </ul>
     <button class="delete-food">Delete</button>
 </script>

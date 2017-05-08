@@ -9,9 +9,9 @@ $(function () {
     app.SavedLibraryView = Backbone.View.extend({
         el: '#saved-items',
 
-        // model: app.SavedFood,
+        model: app.SavedFood,
 
-        //collection: app.savedCollection,
+        collection: app.savedCollection,
         events: {
         },
 
@@ -42,6 +42,14 @@ $(function () {
                 model: item
             });
             this.$el.append(savedFoodView.render().el);
+        },
+
+        // save food when add clicked in library view which sends here
+        saveFood: function( clicked ){
+            // console.log( this.collection );
+            this.collection.create({
+                food: clicked
+            });
         }
 
     });

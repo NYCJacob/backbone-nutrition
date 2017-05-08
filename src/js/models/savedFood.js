@@ -9,16 +9,23 @@ var app = app || {};
 app.SavedFood = Backbone.Model.extend({
 
     defaults: {
-        fields : {
+        savedDate: new Date().toISOString(),
+        userID: '',
+        food : {
+            //id is from nutrinix api result
+            id: '',
             item_name : '',
             nf_calories : '',
             nf_total_fat : '',
             nf_total_carbohydrate : '',
             nf_protein : '',
             nf_serving_size_qty : '',
-            nf_serving_size_unit : ''
+            nf_serving_size_unit : '',
+            meal_type: 'unknown'
         },
-        meal_type: 'unknown'
+        userBMI: '',
+        userBMR: ''
+
     }
 
 });
