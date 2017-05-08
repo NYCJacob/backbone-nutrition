@@ -7,18 +7,19 @@ var app = app || {};
 $(function () {
 
     app.LibCollection = Backbone.Collection.extend({
+        model: app.SavedFood,
 
-    searchTerm: '',
+        searchTerm: '',
 
-    // Nutritionix API request
-    url: function() {
-        return 'https://api.nutritionix.com/v1_1/search/' + this.searchTerm;
-    },
+        // Nutritionix API request
+        url: function() {
+            return 'https://api.nutritionix.com/v1_1/search/' + this.searchTerm;
+        },
 
-    // custom parse needed otherwise fetch return complete raw response by default
-    parse: function(response) {
-        return response.hits; // hits is object needed in api response
-    }
+        // custom parse needed otherwise fetch return complete raw response by default
+        parse: function(response) {
+            return response.hits; // hits is object needed in api response
+        }
 
 
 });

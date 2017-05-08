@@ -23,16 +23,13 @@ $(function () {
 
         addFood: function (e) {
             e.preventDefault();
-            // var savedFood = new app.SavedFood();
-            // var foodFields = this.model.attributes.fields;
-            // var savedFoodModel = this.model.clone();
             //
             // TODO: there should be a better way to do this,  I tried .clone but didn't work
-            console.log(this.model);
+           // console.log(this.model);
 
             app.savedCollection.add( this.model, {merge: true});
             this.model.save();
-            console.log(app.savedCollection);
+            // console.log(app.savedCollection);
 
         },
 
