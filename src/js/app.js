@@ -14,6 +14,7 @@ $(function () {
     // initialize views
     new app.BmiView();
     new app.LibraryView();
+    app.savedFooterView = new app.SavedFooterView();
     app.savedLibraryView = new app.SavedLibraryView({collection: app.savedCollection});
 
 

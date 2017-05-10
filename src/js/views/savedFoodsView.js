@@ -13,7 +13,8 @@ $(function () {
         template: _.template( $( '#savedFoodTemplate' ).html() ),
 
         events: {
-            'click .delete-food': 'deleteFood'
+            'click .delete-food': 'deleteFood',
+            'onchange select.meal-type': 'updateMeal'
         },
 
         // render library by rendering each book in its collection
@@ -23,6 +24,11 @@ $(function () {
             this.$el.html(this.template(this.model.attributes));
 
             return this;
+        },
+
+        // update meal value on dropdown select
+        updateMeal: function () {
+            console.log('update meal hit');
         },
 
         deleteFood: function() {

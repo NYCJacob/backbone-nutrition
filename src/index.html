@@ -75,7 +75,9 @@
         <div class="col-md-6">
             <h2>Saved Items</h2>
             <div  id="saved-items">
-
+            </div>
+            <hr>
+            <div id="saved-footer">
             </div>
         </div>
 
@@ -108,7 +110,18 @@
         <li>Serving Size <%= food.nf_serving_size_qty %> <%= food.nf_serving_size_unit %></li>
         <li>Meal Type: <%= food.meal_type %> </li>
     </ul>
+    <select onchange="" class="meal-type">Meal Type
+        <option value="0" selected>unknown</option>
+        <option value="1" >Breakfast</option>
+        <option value="2" >Lunch</option>
+        <option value="3">Dinner</option>
+        <option value="4">Snack</option>
+    </select>
     <button class="delete-food">Delete</button>
+</script>
+
+<script id="savedFooterTemplate" type="text/template">
+    <footer><span>Calories: <%= daily_calories %></span></footer>
 </script>
 
 
@@ -139,6 +152,7 @@
 <script src="js/views/library.js"></script>
 <script src="js/views/savedFoodsView.js"></script>
 <script src="js/views/savedLibraryView.js"></script>
+<script src="js/views/savedFooterView.js"></script>
 <script src="js/collections/libraryCollection.js"></script>
 <script src="js/collections/savedItems.js"></script>
 
