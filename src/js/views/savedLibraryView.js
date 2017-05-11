@@ -12,6 +12,8 @@ $(function () {
 
         model: app.SavedFood,
 
+        template: _.template( $('#savedFooterTemplate').html() ),
+
         collection: app.savedCollection,
         events: {
         },
@@ -33,11 +35,20 @@ $(function () {
         // render
         render: function () {
             this.$savedItems.html("");
+            // track totals and loop through collection
+            var totals = '';
             this.collection.forEach(function (item) {
-            // app.savedCollection.each(function (item) {
+                totals += item.attributes.food.nf_calories;
                 this.renderSaved(item);
             }, this);
+            this.renderFooter(totals);
         },
+
+        // render saved-footer
+        renderFooter: function (totals) {
+          this.$footer.html(this.template( {total_calories: totals} ));
+        },
+
 
         // render food item
         renderSaved: function (item) {
