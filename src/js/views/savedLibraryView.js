@@ -7,7 +7,8 @@ var app = app || {};
 // wrap within jQuery
 $(function () {
     app.SavedLibraryView = Backbone.View.extend({
-        el: '#saved-items',
+        // el: '#saved-items',
+        el: '#saved-container',
 
         model: app.SavedFood,
 
@@ -16,13 +17,17 @@ $(function () {
         },
 
         initialize: function () {
-            this.render();
+            this.$savedItems = this.$('#saved-items');
+            this.$footer = this.$('#saved-footer');
+            console.log( this.$savedItems );
+            console.log( this.$footer );
             // this.collection = new app.savedCollection();
             // this.collection = app.savedCollection;   // savedCollection initialized in app.js
             //TODO: not sure why this.collection seems to work when collection: not in constructor
             this.listenTo(this.collection, 'add update change', this.render);
             // get localstorage data
             this.collection.fetch();
+            this.render();
         },
 
         // render library by rendering each book in its collection
@@ -30,7 +35,8 @@ $(function () {
             // console.log('savedLibraryView render');
             // console.log( this.el );
             // this.collection = app.savedCollection;
-            this.$el.html("");
+            // this.$el.html("");
+            this.$savedItems.html("");
             this.collection.forEach(function (item) {
             // app.savedCollection.each(function (item) {
                 this.renderSaved(item);
