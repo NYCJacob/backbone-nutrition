@@ -27,15 +27,11 @@ $(function () {
             this.listenTo(this.collection, 'add update change', this.render);
             // get localstorage data
             this.collection.fetch();
-            this.render();
+            // this.render();
         },
 
-        // render library by rendering each book in its collection
+        // render
         render: function () {
-            // console.log('savedLibraryView render');
-            // console.log( this.el );
-            // this.collection = app.savedCollection;
-            // this.$el.html("");
             this.$savedItems.html("");
             this.collection.forEach(function (item) {
             // app.savedCollection.each(function (item) {
@@ -48,7 +44,8 @@ $(function () {
             var savedFoodView = new app.SavedFoodView({
                 model: item
             });
-            this.$el.append(savedFoodView.render().el);
+            // this.$el.append(savedFoodView.render().el);
+            this.$savedItems.append(savedFoodView.render().el);
         },
 
         // save food when add clicked in library view which sends here
