@@ -14,7 +14,7 @@ $(function () {
 
         events: {
             'click .delete-food': 'deleteFood',
-            'onchange select.meal-type': 'updateMeal'
+            'change select.meal-type': 'updateMeal'
         },
 
         // render library by rendering each book in its collection
