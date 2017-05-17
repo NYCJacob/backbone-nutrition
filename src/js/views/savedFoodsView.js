@@ -17,6 +17,10 @@ $(function () {
             'change select.meal-type': 'updateMeal'
         },
 
+        initialize: function () {
+          this.mealType = this.$('.meal-type');
+        },
+
         // render library by rendering each book in its collection
         render: function () {
             console.log('savedFoodsView render');
@@ -28,7 +32,12 @@ $(function () {
 
         // update meal value on dropdown select
         updateMeal: function () {
-            console.log('update meal hit');
+            console.log('updateMeal hit');
+            // todo: storing element reference in init function not working- b/c not in dom at init?
+            // console.log( this.mealType.val() );
+            console.log( this.$('.meal-type').val() ) ;
+            var updatedMeal = this.$('.meal-type').val();
+            this.model.set( {food:  {meal_type: updatedMeal} } );
         },
 
         deleteFood: function() {
