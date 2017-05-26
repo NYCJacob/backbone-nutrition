@@ -90,14 +90,14 @@
 
 <!--underscore templates for views-->
 <script id="foodTemplate" type="text/template">
-    <h3> <%= fields.item_name %> </h3>
-    <h4> Brand:  <%= fields.brand_name %> </h4>
+    <h3> <%= item_name %> </h3>
+    <h4> Brand:  <%= brand_name %> </h4>
     <ul>
-        <li>Calories: <%= fields.nf_calories %> </li>
-        <li>Total Fat <%= fields.nf_total_fat %> </li>
-        <li>Carbohydrates <%= fields.nf_total_carbohydrate %> </li>
-        <li>Protein <%= fields.nf_protein %> </li>
-        <li>Serving Size <%= fields.nf_serving_size_qty %> <%= fields.nf_serving_size_unit %></li>
+        <li>Calories: <%= nf_calories %> </li>
+        <li>Total Fat <%= nf_total_fat %> </li>
+        <li>Carbohydrates <%= nf_total_carbohydrate %> </li>
+        <li>Protein <%= nf_protein %> </li>
+        <li>Serving Size <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
     </ul>
     <button class="add-food">Add Food</button>
 </script>

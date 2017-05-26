@@ -9,9 +9,6 @@ var app = app || {};
 app.SavedFood = Backbone.Model.extend({
 
     defaults: {
-        savedDate: new Date().toISOString(),
-        userID: '',
-        food : {
             //item_id is from nutrinix api result
             item_id: '',
             brand_name: '',
@@ -24,10 +21,6 @@ app.SavedFood = Backbone.Model.extend({
             nf_serving_size_qty : '',
             nf_serving_size_unit : '',
             meal_type: 'unknown'
-        },
-        userBMI: '',
-        userBMR: ''
-
     }
 
 });
