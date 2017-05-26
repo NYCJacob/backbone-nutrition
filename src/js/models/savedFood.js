@@ -12,7 +12,6 @@ app.SavedFood = Backbone.Model.extend({
             //item_id is from nutrinix api result
             item_id: '',
             brand_name: '',
-            upc: '',
             item_name : '',
             nf_calories : '',
             nf_total_fat : '',
@@ -20,6 +19,7 @@ app.SavedFood = Backbone.Model.extend({
             nf_protein : '',
             nf_serving_size_qty : '',
             nf_serving_size_unit : '',
+        // meal_type is not from nutrinix but will come from user input
             meal_type: 'unknown'
     }
 

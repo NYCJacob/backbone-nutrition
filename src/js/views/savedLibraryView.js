@@ -62,9 +62,7 @@ $(function () {
         // save food when add clicked in library view which sends here
         saveFood: function( clicked ){
             // console.log( this.collection );
-            this.collection.create({
-                food: clicked
-            });
+            this.collection.create( clicked );
         }
 
     });
