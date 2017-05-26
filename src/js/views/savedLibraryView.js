@@ -36,9 +36,9 @@ $(function () {
         render: function () {
             this.$savedItems.html("");
             // track totals and loop through collection
-            var totals = '';
+            var totals = 0;
             this.collection.forEach(function (item) {
-                totals += item.attributes.nf_calories;
+                totals +=  parseInt( item.attributes.nf_calories, 10) ;
                 this.renderSaved(item);
             }, this);
             this.renderFooter(totals);
