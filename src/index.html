@@ -29,7 +29,7 @@
 <div class="container-fluid" id="app-view">
 
     <div class="row" id="search-view">
-        <div class="col-md-6">
+        <div class="col-sm-4">
             <form id="search-request">
                 <div class="form-group">
                     <label for="search-terms">Enter Search Terms</label>
@@ -38,7 +38,7 @@
                 <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
             </form>
         </div>
-        <div class="col-md-6" id="bmi-view">
+        <div class="col-sm-4" id="bmi-view">
             <h4>BMI/Life Expectancy</h4>
             <form id="bmi-search">
                 <div class="form-group">
@@ -62,6 +62,9 @@
                 </div>
                 <button type="submit" id="submitBMI" class="btn btn-primary">Submit</button>
             </form>
+        </div>
+        <div class="col-sm-4" id="bmi-results">
+            <h4>BMI Results</h4>
         </div>
     </div>
 
@@ -112,7 +115,7 @@
         <li>Serving Size <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
         <li>Meal Type
             <select class="meal-type">
-                <option> <%= meal_type %></option>
+                <option > <%= meal_type %></option>
                 <option value="Breakfast" >Breakfast</option>
                 <option value="Lunch" >Lunch</option>
                 <option value="Dinner">Dinner</option>
