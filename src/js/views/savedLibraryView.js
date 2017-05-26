@@ -38,7 +38,7 @@ $(function () {
             // track totals and loop through collection
             var totals = '';
             this.collection.forEach(function (item) {
-                totals += item.attributes.food.nf_calories;
+                totals += item.attributes.nf_calories;
                 this.renderSaved(item);
             }, this);
             this.renderFooter(totals);

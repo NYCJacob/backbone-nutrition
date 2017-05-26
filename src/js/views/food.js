@@ -26,22 +26,15 @@ $(function () {
 
             console.log( this.model );
 
-            // var clickedFood = {
-            //     item_id : this.model.attributes.fields.item_id,
-            //     brand_name : this.model.attributes.fields.brand_name,
-            //     upc : this.model.attributes.fields.upc,
-            //     item_name : this.model.attributes.fields.item_name,
-            //     nf_calories : this.model.attributes.fields.nf_calories,
-            //     nf_total_fat : this.model.attributes.fields.nf_total_fat,
-            //     nf_total_carbohydrate : this.model.attributes.fields.nf_total_carbohydrate,
-            //     nf_protein : this.model.attributes.fields.nf_protein,
-            //     nf_serving_size_qty : this.model.attributes.fields.nf_serving_size_qty,
-            //     nf_serving_size_unit : this.model.attributes.fields.nf_serving_size_unit,
-            //     meal_type: 'unknown'
-            // };
-
             // need to get to other view for proper collection.sync method to localstorage
-            app.savedLibraryView.saveFood( this.model );
+            // this created issues sending api result data to different collection that
+            // uses localstorage for fetch.
+            //  This was solved and then model results parsed to simplify but then
+            //  passing this.model like this:
+            //  app.savedLibraryView.saveFood( this.model );
+            // seemed to trigger wrong fetch method as api request was resent returning a 404
+            var clickedFood = _.clone( this.model.attributes );
+            app.savedLibraryView.saveFood( clickedFood );
 
             // console.log(app.savedCollection);
         },
