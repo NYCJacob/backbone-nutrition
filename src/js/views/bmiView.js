@@ -9,6 +9,8 @@ $(function () {
     app.BmiView = Backbone.View.extend({
         el: '#bmi-view',
 
+        model: app.SavedBMI,
+
         events: {
             'click button#submitBMI': 'searchBMI'
         },
@@ -59,7 +61,8 @@ $(function () {
                 //TODO: need to set to model and that will trigger view render
                 console.log( data );
 
-            })  // done promise
+
+            });  // done promise
         },
 
         searchSuccess: function () {
