@@ -13,7 +13,6 @@ $(function () {
 
     // initialize views
     new app.LibraryView();
-    // app.savedFooterView = new app.SavedFooterView();
     app.savedLibraryView = new app.SavedLibraryView({collection: app.savedCollection});
     app.bmiView = new app.BmiView();
 

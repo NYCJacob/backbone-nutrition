@@ -9,7 +9,8 @@ $(function () {
     app.BmiView = Backbone.View.extend({
         el: '#bmi-view',
 
-        model: app.SavedBMI,
+        // model: app.SavedBMI,
+        template: _.template( $('#savedFooterTemplate').html() ),
 
         events: {
             'click button#submitBMI': 'searchBMI'
@@ -20,12 +21,10 @@ $(function () {
         },
 
         // render bmi
-        render: function () {
-            this.collection.each(function (item) {
-                // console.log(item);
-                this.renderFood(item);
-            }, this);
-        },
+        // render: function () {
+        //
+        //     }, this);
+        // },
 
         searchBMI: function (e) {
             e.preventDefault();
@@ -60,7 +59,6 @@ $(function () {
                 // data is a json object returned from api
                 //TODO: need to set to model and that will trigger view render
                 console.log( data );
-
 
             });  // done promise
         },

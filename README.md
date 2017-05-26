@@ -6,4 +6,5 @@ currently all files are in src/ and you need to load index.html on a server.  A 
 results in the results div.
 
 ## Issues
-- saved items collection render not working
+- BMI api not very robust; need to to metric-standard conversions resulting in rounding errors
+- need to implement build process

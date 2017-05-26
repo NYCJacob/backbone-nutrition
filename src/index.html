@@ -29,7 +29,7 @@
 <div class="container-fluid" id="app-view">
 
     <div class="row" id="search-view">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
             <form id="search-request">
                 <div class="form-group">
                     <label for="search-terms">Enter Search Terms</label>
@@ -38,34 +38,41 @@
                 <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
             </form>
         </div>
-        <div class="col-sm-4" id="bmi-view">
-            <h4>BMI/Life Expectancy</h4>
-            <form id="bmi-search">
-                <div class="form-group">
-                    <label for="bmi-height">Enter Height (inches)</label>
-                    <input type="text" name="bmiHeight" id="bmi-height"></input>
+        <div class="col-sm-6" id="bmi-view">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>BMI/Life Expectancy</h4>
+                    <form id="bmi-search">
+                        <div class="form-group">
+                            <label for="bmi-height">Enter Height (inches)</label>
+                            <input type="text" name="bmiHeight" id="bmi-height"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="bmi-weight">Enter Weight (pounds)</label>
+                            <input type="text" name="bmiWeight" id="bmi-weight"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="life-age">Enter Age</label>
+                            <input type="number" name="lifeAge" id="life-age"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="life-gender">Choose Gender</label>
+                            <select id="life-gender" form="bmi-search">
+                                <option value="m">Male</option>
+                                <option value="f" selected>Female</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="submitBMI" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="bmi-weight">Enter Weight (pounds)</label>
-                    <input type="text" name="bmiWeight" id="bmi-weight"></input>
+                <div class="col-sm-6" id="bmi-results">
+                    <h4>BMI Results</h4>
                 </div>
-                <div class="form-group">
-                    <label for="life-age">Enter Age</label>
-                    <input type="number" name="lifeAge" id="life-age"></input>
-                </div>
-                <div class="form-group">
-                    <label for="life-gender">Choose Gender</label>
-                    <select id="life-gender" form="bmi-search">
-                        <option value="m">Male</option>
-                        <option value="f" selected>Female</option>
-                    </select>
-                </div>
-                <button type="submit" id="submitBMI" class="btn btn-primary">Submit</button>
-            </form>
+
+            </div>
+
         </div>
-        <div class="col-sm-4" id="bmi-results">
-            <h4>BMI Results</h4>
-        </div>
+
     </div>
 
     <div class="row">
@@ -92,6 +99,20 @@
 </div><!-- /.container -->
 
 <!--underscore templates for views-->
+<script id="bmiTemplate" type="text/template">
+    weight
+    height
+    age
+    bmi_prime
+    bmi_risk
+    bmi_status
+    bmi_value
+    bmr_value
+    ideal_weight
+
+
+</script>
+
 <script id="foodTemplate" type="text/template">
     <h3> <%= item_name %> </h3>
     <h4> Brand:  <%= brand_name %> </h4>
