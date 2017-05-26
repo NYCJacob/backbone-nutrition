@@ -33,10 +33,8 @@ $(function () {
         // update meal value on dropdown select
         updateMeal: function () {
             console.log('updateMeal hit');
-            // todo: storing element reference in init function not working- b/c not in dom at init?
-            // console.log( this.mealType.val() );
-            console.log( this.$('.meal-type').val() ) ;
             var updatedMeal = this.$('.meal-type').val();
+
             this.model.set( {meal_type: updatedMeal} );
         },
 

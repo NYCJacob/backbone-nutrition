@@ -110,15 +110,17 @@
         <li>Carbohydrates <%= nf_total_carbohydrate %> </li>
         <li>Protein <%= nf_protein %> </li>
         <li>Serving Size <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
-        <li>Meal Type: <%= meal_type %> </li>
+        <li>Meal Type
+            <select class="meal-type">
+                <option> <%= meal_type %></option>
+                <option value="Breakfast" >Breakfast</option>
+                <option value="Lunch" >Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Snack">Snack</option>
+            </select>
+        </li>
     </ul>
-    <select class="meal-type">Meal Type
-        <option value="0" selected>unknown</option>
-        <option value="1" >Breakfast</option>
-        <option value="2" >Lunch</option>
-        <option value="3">Dinner</option>
-        <option value="4">Snack</option>
-    </select>
+
     <button class="delete-food">Delete</button>
 </script>
 
