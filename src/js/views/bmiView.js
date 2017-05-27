@@ -10,19 +10,30 @@ $(function () {
         el: '#bmi-view',
 
         // model: app.SavedBMI,
-        template: _.template( $('#savedFooterTemplate').html() ),
+        template: _.template( $('#bmiTemplate').html() ),
 
         events: {
             'click button#submitBMI': 'searchBMI'
         },
 
         initialize: function () {
-
+            this.$bmiResults = this.$( '#bmi-results');
         },
 
         // render bmi
         render: function ( data ) {
-            this.$el.html(this.template( data ));
+            var weights = data.ideal_weight.match(/(\d+\.\d+|\d+)/g);  // regex to extract decimal metric weights
+            // convert kg to lbs and round to int
+            var weightLB_0 = Math.round(weights[0] * 2.20462);
+            var weightLB_1 = Math.round(weights[1] * 2.20462);
+            // replace idea_weight fields
+            data.ideal_weight =  data.ideal_weight.replace(weights[0], weightLB_0);
+            data.ideal_weight = data.ideal_weight.replace(weights[1], weightLB_1);
+            // global option not available on string to string replacement like with regex
+            data.ideal_weight = data.ideal_weight.replace('kg', 'lb');
+            data.ideal_weight = data.ideal_weight.replace('kg', 'lb');
+            // send data via _template to results div not el
+            this.$bmiResults.html(this.template( data ));
             return this;
             },
 

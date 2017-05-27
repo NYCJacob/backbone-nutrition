@@ -65,8 +65,11 @@
                         <button type="submit" id="submitBMI" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
-                <div class="col-sm-6" id="bmi-results">
+                <div class="col-sm-6" >
                     <h4>BMI Results</h4>
+                    <div id="bmi-results">
+
+                    </div>
                 </div>
 
             </div>
@@ -100,16 +103,14 @@
 
 <!--underscore templates for views-->
 <script id="bmiTemplate" type="text/template">
-    weight
-    height
-    age
-    bmi_prime
-    bmi_risk
-    bmi_status
-    bmi_value
-    bmr_value
-    ideal_weight
-
+    <ul>
+        <li>You are <%= bmi.status %> </li>
+        <li>You have a <%= bmi.risk %> </li>
+        <li>Your BMI is <%= bmi.value %> </li>
+        <li>Your ideal weight is <%= ideal_weight %> </li>
+        <li>Your BMR is <%= bmr.value %>.  This is the approximate amount of calories you would burn if
+        you did nothing all day.  If you eat more calories than you burn you gain weight. </li>
+    </ul>
 
 </script>
 
