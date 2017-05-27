@@ -21,13 +21,15 @@ $(function () {
         },
 
         // render bmi
-        // render: function () {
-        //
-        //     }, this);
-        // },
+        render: function ( data ) {
+            this.$el.html(this.template( data ));
+            return this;
+            },
 
         searchBMI: function (e) {
             e.preventDefault();
+
+            var self = this;
             // using ajax rather than another collection.fetch call
             // TODO: multiple api calls with one collection?
 
@@ -57,9 +59,7 @@ $(function () {
                 data: JSON.stringify(urlData)
             }).done(function( data ){
                 // data is a json object returned from api
-                //TODO: need to set to model and that will trigger view render
-                console.log( data );
-
+                self.render(data);
             });  // done promise
         },
 

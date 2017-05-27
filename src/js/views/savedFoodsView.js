@@ -26,23 +26,19 @@ $(function () {
             console.log('savedFoodsView render');
             // this.$el.append( this.template( this.model.attributes.fields ) );
             this.$el.html(this.template(this.model.attributes));
-
             return this;
         },
 
         // update meal value on dropdown select
         updateMeal: function () {
-            console.log('updateMeal hit');
+            // console.log('updateMeal hit');
             var updatedMeal = this.$('.meal-type').val();
-
-            this.model.save( {meal_type: updatedMeal} );
+            this.model.save( {meal_type: updatedMeal} );   // save persists to database unlike set
         },
 
         deleteFood: function() {
-            console.log('deleteFood hit');
             //Delete model
             this.model.destroy();
-            console.log(this);
             //Delete view
             this.remove();
         }
