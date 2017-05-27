@@ -35,7 +35,7 @@ $(function () {
             console.log('updateMeal hit');
             var updatedMeal = this.$('.meal-type').val();
 
-            this.model.set( {meal_type: updatedMeal} );
+            this.model.save( {meal_type: updatedMeal} );
         },
 
         deleteFood: function() {
