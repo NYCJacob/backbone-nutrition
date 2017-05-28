@@ -5,3 +5,15 @@ body {
     padding: 3rem 1.5rem;
     text-align: center;
 }
+
+
+/*user added styles start*/
+#searchResults {
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+#saved-container {
+    overflow-y: auto;
+    max-height: 100vh
+}
