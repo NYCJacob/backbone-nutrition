@@ -36,7 +36,6 @@ $(function () {
             var clickedFood = _.clone( this.model.attributes );
             app.savedLibraryView.saveFood( clickedFood );
 
-            // console.log(app.savedCollection);
         },
 
         render: function () {

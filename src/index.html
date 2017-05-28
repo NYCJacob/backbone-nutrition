@@ -140,13 +140,13 @@
     <div class="card">
         <div class="card-header" role="tab" id=<%= item_id %>>
             <h5 class="mb-0">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <a data-toggle="collapse" data-parent="#accordion" href=<%= href %> aria-expanded="true" aria-controls="collapseOne">
                     <%= item_name %>
                 </a>
             </h5>
         </div>
 
-        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+        <div id=<%= divId %> class="collapse show" role="tabpanel" aria-labelledby=<%= headingLabel %>>
             <div class="card-block">
                 <ul>
                     <li>Calories: <%= nf_calories %> </li>

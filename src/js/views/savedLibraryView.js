@@ -21,15 +21,13 @@ $(function () {
         initialize: function () {
             this.$savedItems = this.$('#saved-items');
             this.$footer = this.$('#saved-footer');
-            console.log( this.$savedItems );
-            console.log( this.$footer );
+            this.modelCount = 0;
             // this.collection = new app.savedCollection();
             // this.collection = app.savedCollection;   // savedCollection initialized in app.js
             //TODO: not sure why this.collection seems to work when collection: not in constructor
             this.listenTo(this.collection, 'add update change', this.render);
             // get localstorage data
             this.collection.fetch();
-            // this.render();
         },
 
         // render
@@ -41,6 +39,11 @@ $(function () {
                 totals +=  parseInt( item.attributes.nf_calories, 10);
                 // add quotes to id for use in html id accordian attribute
                 item.attributes.id = '"' + item.attributes.id + '"';
+                item.attributes.href = '"' + '#collapse' + item.attributes.modelCount + '"';
+                item.attributes.divId = '"' + 'collapse' + item.attributes.modelCount + '"';
+                item.attributes.headingLabel = '"' + 'heading' + item.attributes.modelCount + '"';
+                item.attributes.ariaControl = '"' + 'collapse' + item.attributes.modelCount + '"';
+
                 this.renderSaved(item);
             }, this);
             this.renderFooter(totals);
@@ -64,6 +67,9 @@ $(function () {
         // save food when add clicked in library view which sends here
         saveFood: function( clicked ){
             // console.log( this.collection );
+            // add attribute for html accordian attributes for proper templating
+            this.modelCount++;
+            clicked.modelCount = this.modelCount;
             this.collection.create( clicked );
         }
 
