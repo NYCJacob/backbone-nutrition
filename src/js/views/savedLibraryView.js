@@ -38,7 +38,9 @@ $(function () {
             // track totals and loop through collection
             var totals = 0;
             this.collection.forEach(function (item) {
-                totals +=  parseInt( item.attributes.nf_calories, 10) ;
+                totals +=  parseInt( item.attributes.nf_calories, 10);
+                // add quotes to id for use in html id accordian attribute
+                item.attributes.id = '"' + item.attributes.id + '"';
                 this.renderSaved(item);
             }, this);
             this.renderFooter(totals);

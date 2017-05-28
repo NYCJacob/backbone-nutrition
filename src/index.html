@@ -90,9 +90,12 @@
                 </div>
                 <div class="col-md-6">
                     <div id="saved-container">
-                        <h2>Saved Items</h2>
+                        <h2>Saved Food Items</h2>
                         <div  id="saved-items">
-                        </div>
+                            <div id="accordion" role="tablist" aria-multiselectable="true">
+
+
+                            </div>
                         <hr>
                         <div id="saved-footer">
                         </div>
@@ -134,25 +137,37 @@
 </script>
 
 <script id="savedFoodTemplate" type="text/template">
-    <h3> Item Name <%= item_name %> </h3>
-    <ul>
-        <li>Calories: <%= nf_calories %> </li>
-        <li>Total Fat <%= nf_total_fat %> </li>
-        <li>Carbohydrates <%= nf_total_carbohydrate %> </li>
-        <li>Protein <%= nf_protein %> </li>
-        <li>Serving Size <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
-        <li>Meal Type
-            <select class="meal-type">
-                <option > <%= meal_type %></option>
-                <option value="Breakfast" >Breakfast</option>
-                <option value="Lunch" >Lunch</option>
-                <option value="Dinner">Dinner</option>
-                <option value="Snack">Snack</option>
-            </select>
-        </li>
-    </ul>
+    <div class="card">
+        <div class="card-header" role="tab" id=<%= item_id %>>
+            <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <%= item_name %>
+                </a>
+            </h5>
+        </div>
 
-    <button class="delete-food">Delete</button>
+        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+            <div class="card-block">
+                <ul>
+                    <li>Calories: <%= nf_calories %> </li>
+                    <li>Total Fat <%= nf_total_fat %> </li>
+                    <li>Carbohydrates <%= nf_total_carbohydrate %> </li>
+                    <li>Protein <%= nf_protein %> </li>
+                    <li>Serving Size <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
+                    <li>Meal Type
+                        <select class="meal-type">
+                            <option > <%= meal_type %></option>
+                            <option value="Breakfast" >Breakfast</option>
+                            <option value="Lunch" >Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Snack">Snack</option>
+                        </select>
+                    </li>
+                </ul>
+                <button class="delete-food">Delete</button>
+            </div>
+        </div>
+    </div>
 </script>
 
 <script id="savedFooterTemplate" type="text/template">
