@@ -10,7 +10,7 @@ body {
 /*user added styles start*/
 #searchResults {
     overflow-y: auto;
-    max-height: 100vh;
+    /*max-height: 100vh;*/
 }
 
 #saved-container {
