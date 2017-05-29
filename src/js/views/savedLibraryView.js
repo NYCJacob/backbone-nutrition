@@ -65,7 +65,9 @@ $(function () {
 
             // check for dup food based on nutritionix id
             var exists = this.collection.findWhere( {item_id: clicked.item_id} );
-            if (typeof exists != 'undefined') {
+            if (typeof exists != 'object') {
+                // clear possible prior message
+                app.messenger.hideMessage();
                 // add attribute for html accordian attributes for proper templating
                 this.modelCount++;
                 clicked.modelCount = this.modelCount;
@@ -78,6 +80,7 @@ $(function () {
                 this.collection.create( clicked );
             }else {
                 console.log( "model exists");
+                app.messenger.showMessage( "model exists");
             }
 
 

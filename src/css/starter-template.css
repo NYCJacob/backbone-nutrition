@@ -17,3 +17,7 @@ body {
     overflow-y: auto;
     max-height: 100vh
 }
+
+#user-message {
+    display: none;
+}
