@@ -38,7 +38,9 @@ $(function () {
             // track totals and loop through collection
             var totals = 0;
             this.collection.forEach(function (item) {
-                totals +=  parseInt( item.get("nf_calories"), 10);
+                // https://stackoverflow.com/questions/10003683/javascript-get-number-from-string
+                var servingsInt = item.get("servings").match(/\d+/)[0]
+                totals +=  parseInt( ( item.get("nf_calories") * servingsInt ), 10);
                 this.renderSaved(item);
             }, this);
             this.renderFooter(totals);
