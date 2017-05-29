@@ -50,15 +50,15 @@
                             <form id="bmi-search">
                                 <div class="form-group">
                                     <label for="bmi-height">Enter Height (inches)</label>
-                                    <input type="text" name="bmiHeight" id="bmi-height"></input>
+                                    <input type="text" name="bmiHeight" id="bmi-height">
                                 </div>
                                 <div class="form-group">
                                     <label for="bmi-weight">Enter Weight (pounds)</label>
-                                    <input type="text" name="bmiWeight" id="bmi-weight"></input>
+                                    <input type="text" name="bmiWeight" id="bmi-weight">
                                 </div>
                                 <div class="form-group">
                                     <label for="life-age">Enter Age</label>
-                                    <input type="number" name="lifeAge" id="life-age"></input>
+                                    <input type="number" name="lifeAge" id="life-age">
                                 </div>
                                 <div class="form-group">
                                     <label for="life-gender">Choose Gender</label>
@@ -152,10 +152,11 @@
             <div class="card-block">
                 <ul>
                     <li>Calories: <%= nf_calories %> </li>
-                    <li>Total Fat <%= nf_total_fat %> </li>
-                    <li>Carbohydrates <%= nf_total_carbohydrate %> </li>
-                    <li>Protein <%= nf_protein %> </li>
-                    <li>Serving Size <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
+                    <li>Total Fat: <%= nf_total_fat %> </li>
+                    <li>Carbohydrates: <%= nf_total_carbohydrate %> </li>
+                    <li>Protein: <%= nf_protein %> </li>
+                    <li>Serving Size: <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
+                    <li>Servings Eaten:<input type="number" value= <%= servings %> id="servings">   </li>
                     <li>Meal Type
                         <select class="meal-type">
                             <option > <%= meal_type %></option>

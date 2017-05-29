@@ -21,3 +21,7 @@ body {
 #user-message {
     display: none;
 }
+
+#servings {
+    width: 2.5em;
+}

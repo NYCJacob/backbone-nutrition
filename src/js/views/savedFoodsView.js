@@ -14,11 +14,13 @@ $(function () {
 
         events: {
             'click .delete-food': 'deleteFood',
-            'change select.meal-type': 'updateMeal'
+            'change select.meal-type': 'updateMeal',
+            'change input#servings' : 'updateServings'
         },
 
         initialize: function () {
           this.mealType = this.$('.meal-type');
+          this.servings = this.$('#servings');
         },
 
         // render library by rendering each book in its collection
@@ -34,6 +36,12 @@ $(function () {
             // console.log('updateMeal hit');
             var updatedMeal = this.$('.meal-type').val();
             this.model.save( {meal_type: updatedMeal} );   // save persists to database unlike set
+        },
+
+        // update servings
+        updateServings: function () {
+          var updatedServings = '"'  + this.$('#servings').val() + '"';
+          this.model.save( {servings: updatedServings} )
         },
 
         deleteFood: function() {

@@ -79,7 +79,7 @@ $(function () {
                 // clicked object key:values map to model
                 this.collection.create( clicked );
             }else {
-                console.log( "model exists");
+                // console.log( "model exists");
                 app.messenger.showMessage( "model exists");
             }
 
