@@ -25,3 +25,30 @@ body {
 #servings {
     width: 2.5em;
 }
+
+/*set save food text table col widths*/
+.column-one {
+    width: 60%;
+}
+
+.column-two {
+    width: 40%;
+}
+
+/*accordian up down arrows*/
+.card-panel:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    font-size: 13px;
+    color: #777;
+    float: left;
+    margin-left: 5px;
+}
+
+.collapsed:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+}
+
+/*override default bootstrap padding*/
+.card-header {
+    padding: 0!important;
+}
