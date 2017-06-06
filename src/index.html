@@ -27,8 +27,52 @@
 <div class="container-fluid" id="app-view">
 
     <div id="app-hello">
-        <!--this will be the firs thing shown to user, allowing user to select how to proceed-->
+        <!--this will be the first thing shown to user, allowing user to select how to proceed-->
+        <div id="accordion-hello" role="tablist" aria-multiselectable="true">
+            <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                    <h5 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordion-hello" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Intro
+                        </a>
+                    </h5>
+                </div>
 
+                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="card-block">
+                    This explains the app to the user.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwo">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion-hello" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Body Mass Index (BMI)
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="card-block">
+                        This will explain BMI.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="headingThree">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion-hello" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Search Food Data
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="card-block">
+                        This will explain food data search.
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
