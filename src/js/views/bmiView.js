@@ -13,7 +13,6 @@ $(function () {
         template: _.template( $('#bmiTemplate').html() ),
 
         events: {
-            'click button#submitBMI': 'searchBMI'
         },
 
         initialize: function () {
