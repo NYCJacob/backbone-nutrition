@@ -15,11 +15,13 @@ $(function () {
         el: '#app-view',
 
         events: {
-            'click button#bmi-start': 'startBMI'
+            'click button#bmi-start': 'startBMI',
+            'click div#main-menu-toggle': 'showMainMenu'
          },
 
         initialize: function () {
             this.$appHello = this.$('#app-hello');
+            this.$menuIcon = this.$('#main-menu-toggle')
         },
 
         // render bmi
@@ -30,6 +32,12 @@ $(function () {
 
         startBMI: function () {
             this.$appHello.addClass("collapse");
+            this.$menuIcon.removeClass("collapse")
+        },
+
+        showMainMenu: function () {
+            this.$menuIcon.addClass("collapse");
+            this.$appHello.removeClass("collapse")
         }
     });
 
