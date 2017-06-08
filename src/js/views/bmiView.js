@@ -13,6 +13,7 @@ $(function () {
         template: _.template( $('#bmiTemplate').html() ),
 
         events: {
+            'click button#submitBMI': 'searchBMI'
         },
 
         initialize: function () {
@@ -41,7 +42,6 @@ $(function () {
 
             var self = this;
             // using ajax rather than another collection.fetch call
-            // TODO: multiple api calls with one collection?
 
             // Make JSON request to https://bmi.p.mashape.com/
             // could only get api to work using default metric values

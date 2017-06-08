@@ -39,6 +39,7 @@ $(function () {
             this.$appUX.removeClass("collapse");
             this.$appControl.removeClass("collapse");
             this.$bmiControl.removeClass("collapse");
+            app.bmiView = new app.BmiView();
         },
 
         showMainMenu: function () {

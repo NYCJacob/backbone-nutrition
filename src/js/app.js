@@ -15,8 +15,6 @@ $(function () {
     new app.StartView();
     new app.LibraryView();
     app.savedLibraryView = new app.SavedLibraryView({collection: app.savedCollection});
-    app.bmiView = new app.BmiView();
-
 
     // debug code
     // app.savedCollection.on('all',function(eventName) {
