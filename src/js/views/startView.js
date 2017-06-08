@@ -16,14 +16,17 @@ $(function () {
 
         events: {
             'click button#bmi-start': 'startBMI',
+            'click button#food-start': 'startFoodSearch',
             'click div#main-menu-toggle': 'showMainMenu'
          },
 
         initialize: function () {
+            // cache dom elements
             this.$appHello = this.$('#app-hello');
             this.$menuIcon = this.$('#main-menu-toggle');
             this.$appUX = this.$('#app-ux-container');
             this.$bmiControl = this.$('#bmi-controls');
+            this.$searchView = this.$('#search-view');
         },
 
         // render bmi
@@ -33,11 +36,16 @@ $(function () {
         },
 
         startBMI: function () {
-            this.$appHello.addClass("collapse");
-            this.$menuIcon.removeClass("collapse");
             this.$appUX.removeClass("collapse");
             this.$bmiControl.removeClass("collapse");
             app.bmiView = new app.BmiView();
+        },
+
+        startFoodSearch: function () {
+            this.$appHello.addClass("collapse");
+            this.$menuIcon.removeClass("collapse");
+            this.$appUX.removeClass("collapse");
+            this.$searchView.removeClass( "collapse" );
         },
 
         showMainMenu: function () {
