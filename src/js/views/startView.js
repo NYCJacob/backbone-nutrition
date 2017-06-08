@@ -23,7 +23,6 @@ $(function () {
             this.$appHello = this.$('#app-hello');
             this.$menuIcon = this.$('#main-menu-toggle');
             this.$appUX = this.$('#app-ux-container');
-            this.$appControl = this.$('#app-controls');
             this.$bmiControl = this.$('#bmi-controls');
         },
 
@@ -37,7 +36,6 @@ $(function () {
             this.$appHello.addClass("collapse");
             this.$menuIcon.removeClass("collapse");
             this.$appUX.removeClass("collapse");
-            this.$appControl.removeClass("collapse");
             this.$bmiControl.removeClass("collapse");
             app.bmiView = new app.BmiView();
         },
@@ -46,10 +44,8 @@ $(function () {
             this.$menuIcon.addClass("collapse");
             this.$appHello.removeClass("collapse");
             this.$appUX.addClass("collapse");
-            this.$appControl.addClass("collapse");
             this.$bmiControl.addClass("collapse");
         }
     });
 
 });
-
