@@ -91,14 +91,20 @@
     <div id="app-ux-container" class="collapse">
         <div class="collapse" id="search-view">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-xs-12 col-md-6">
                     <form id="search-request" class="form-inline">
-                        <div class="form-group">
-                            <label for="search-terms">Enter Food Name</label>
-                            <input type="text" class="form-control" placeholder="Enter search terms" id="search-terms">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter search terms" id="search-terms">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
+                            </div>
                         </div>
-                        <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
                     </form>
+                    <hr>
                 </div>
             </div>
             <div class="row">
