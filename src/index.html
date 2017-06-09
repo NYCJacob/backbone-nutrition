@@ -92,10 +92,10 @@
         <div class="collapse" id="search-view">
             <div class="row">
                 <div class="col-sm-12">
-                    <form id="search-request">
+                    <form id="search-request" class="form-inline">
                         <div class="form-group">
-                            <label for="search-terms">Enter Search Terms</label>
-                            <textarea name="searchTerms" id="search-terms" cols="20" rows="1"></textarea>
+                            <label for="search-terms">Enter Food Name</label>
+                            <input type="text" class="form-control" placeholder="Enter search terms" id="search-terms">
                         </div>
                         <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
                     </form>
@@ -216,7 +216,7 @@
             </h5>
         </div>
 
-        <div id=<%= divId %> class="collapse" role="tabpanel" aria-labelledby=<%= headingLabel %>>
+        <div id=<%= divId %> class="collapse show" role="tabpanel" aria-labelledby=<%= headingLabel %>>
             <div class="card-block">
                 <ul>
                     <li>Calories: <%= nf_calories %> </li>
