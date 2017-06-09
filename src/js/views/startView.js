@@ -43,7 +43,6 @@ $(function () {
             this.$searchView.addClass( "collapse" );
             this.$appHello.addClass("collapse");
             this.$menuIcon.removeClass("collapse");
-
             this.$appUX.removeClass("collapse");
             this.$bmiControl.removeClass("collapse");
             app.bmiView = new app.BmiView();

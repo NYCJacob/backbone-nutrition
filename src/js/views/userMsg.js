@@ -7,8 +7,6 @@ var app = app || {};
 // wrap within jQuery $
 $(function () {
     app.messageView = Backbone.View.extend({
-        // tagName: 'div',
-        // className: 'user-message',
 
         el: '#user-message',
 
