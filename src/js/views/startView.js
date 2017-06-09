@@ -17,7 +17,9 @@ $(function () {
             'click button#bmi-start': 'startBMI',
             'click button#food-start': 'startFoodSearch',
             'click div#main-menu-toggle': 'showMainMenu',
-            'click div#headingOne': 'clearContent'
+            'click div#headingOne': 'clearMsg',
+            'click div#headingTwo': 'clearMsg',
+            'click div#headingThree': 'clearMsg'
          },
 
         initialize: function () {
@@ -35,9 +37,10 @@ $(function () {
             return this;
         },
 
-        clearContent: function () {
-
+        clearMsg: function () {
+          app.messenger.showMessage('');
         },
+
 // todo: function to clear out prior views
         startBMI: function () {
             this.$searchView.addClass( "collapse" );
