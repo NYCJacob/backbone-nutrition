@@ -56,6 +56,8 @@ $(function () {
             }, this);
             // object to pass totals to template via render
             var totals = { cals: totalCals, carbs: totalCarbs, fat: totalFat, protein: totalProtein};
+            // pass totals to global var
+            app.nutritionData = totals;
             this.renderFooter(totals);
         },
 

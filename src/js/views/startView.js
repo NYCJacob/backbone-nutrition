@@ -11,6 +11,10 @@ var app = app || {};
 
 // wrap within jQuery $
 $(function () {
+    // globals to use data across views
+    app.bmiData = {};
+    app.nutritionData = {};
+
     app.StartView = Backbone.View.extend({
         el: '#app-view',
 

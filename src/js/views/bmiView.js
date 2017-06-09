@@ -32,6 +32,9 @@ $(function () {
             // global option not available on string to string replacement like with regex
             data.ideal_weight = data.ideal_weight.replace('kg', 'lb');
             data.ideal_weight = data.ideal_weight.replace('kg', 'lb');
+
+            // store data to global
+            app.bmiData = data;
             // send data via _template to results div not el
             this.$bmiResults.html(this.template( data ));
             return this;
