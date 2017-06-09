@@ -15,6 +15,7 @@ $(function () {
     new app.StartView();
     new app.LibraryView();
     app.savedLibraryView = new app.SavedLibraryView({collection: app.savedCollection});
+    app.analyzeView = new app.AnalyzeView();
 
     // debug code
     // app.savedCollection.on('all',function(eventName) {
