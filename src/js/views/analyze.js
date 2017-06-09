@@ -27,6 +27,7 @@ $(function () {
             console.log( "start analysis");
             console.log( app.bmiData );
             console.log( app.nutritionData );
+
         }
 
     });

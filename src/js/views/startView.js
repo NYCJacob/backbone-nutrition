@@ -16,7 +16,8 @@ $(function () {
         events: {
             'click button#bmi-start': 'startBMI',
             'click button#food-start': 'startFoodSearch',
-            'click div#main-menu-toggle': 'showMainMenu'
+            'click div#main-menu-toggle': 'showMainMenu',
+            'click div#headingOne': 'clearContent'
          },
 
         initialize: function () {
@@ -34,7 +35,15 @@ $(function () {
             return this;
         },
 
+        clearContent: function () {
+
+        },
+// todo: function to clear out prior views
         startBMI: function () {
+            this.$searchView.addClass( "collapse" );
+            this.$appHello.addClass("collapse");
+            this.$menuIcon.removeClass("collapse");
+
             this.$appUX.removeClass("collapse");
             this.$bmiControl.removeClass("collapse");
             app.bmiView = new app.BmiView();

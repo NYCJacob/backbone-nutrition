@@ -12,6 +12,7 @@ $(function () {
         searchTerm: '',
 
         // Nutritionix API request
+        //todo: see if there is a way to integrate USDA food groups
         url: function() {
             return 'https://api.nutritionix.com/v1_1/search/' + this.searchTerm;
         },
