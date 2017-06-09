@@ -115,6 +115,8 @@
                 </div>
                 <div class="col-md-6">
                     <div id="saved-container">
+                        <div id="saved-footer">
+                        </div>
                         <h2>Saved Food Items</h2>
                         <div  id="saved-items">
                             <div id="accordion" role="tablist" aria-multiselectable="true">
@@ -122,8 +124,6 @@
                             </div>
                         </div>
                         <hr>
-                        <div id="saved-footer">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -247,8 +247,15 @@
     </div>
 </script>
 
+<!--{ cals: totalCals, carbs: totalCarbs, fat: totalFat, protein: totalProtein}-->
+
 <script id="savedFooterTemplate" type="text/template">
-    <footer><span>Calories: <%= total_calories %></span></footer>
+    <footer> <span>Totals: </span>
+        <span>Calories: <%= cals %></span>
+        <span>Carbs: <%= carbs %></span>
+        <span>Fat: <%= fat %></span>
+        <span>Protein: <%= protein %></span>
+    </footer>
 </script>
 
 

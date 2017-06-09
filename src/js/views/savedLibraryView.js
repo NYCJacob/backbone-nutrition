@@ -32,23 +32,36 @@ $(function () {
             this.collection.fetch();
         },
 
+        nf_total_fat : '',
+        nf_total_carbohydrate : '',
+        nf_protein : '',
+
         // render
         render: function () {
             this.$savedItems.html("");
             // track totals and loop through collection
-            var totals = 0;
+            var totalCals = 0;
+            var totalFat = 0;
+            var totalCarbs = 0;
+            var totalProtein = 0;
+
             this.collection.forEach(function (item) {
                 // https://stackoverflow.com/questions/10003683/javascript-get-number-from-string
                 var servingsInt = item.get("servings").match(/\d+/)[0]
-                totals +=  parseInt( ( item.get("nf_calories") * servingsInt ), 10);
+                totalCals +=  parseInt( ( item.get("nf_calories") * servingsInt ), 10);
+                totalFat +=  parseInt( ( item.get("nf_total_fat") * servingsInt ), 10);
+                totalCarbs +=  parseInt( ( item.get("nf_total_carbohydrate") * servingsInt ), 10);
+                totalProtein +=  parseInt( ( item.get("nf_protein") * servingsInt ), 10);
                 this.renderSaved(item);
             }, this);
+            // object to pass totals to template via render
+            var totals = { cals: totalCals, carbs: totalCarbs, fat: totalFat, protein: totalProtein};
             this.renderFooter(totals);
         },
 
         // render saved-footer
         renderFooter: function (totals) {
-          this.$footer.html(this.template( {total_calories: totals} ));
+          this.$footer.html(this.template( totals ));
         },
 
 
