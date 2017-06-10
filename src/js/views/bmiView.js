@@ -92,26 +92,27 @@ $(function () {
             var gender = this.$('#life-gender').val();   // could not find a way to pass this value from ajax
 
             var age = parseInt( this.$('#life-age').val() ) ;
-            var ageIndex = 0;
+            // this will be the new age value for the eer object age index
+            var ageIndex;
 
             // find age slot
             switch (age) {
-                case ( age > 75 ):
+                case age > 75 :
                     ageIndex = '76';
                     break;
-                case ( age <= 13 ):
+                case  age <= 13 :
                     ageIndex = '13';
                     break;
-                case ( age > 13 && age < 19):
+                case  age > 13 && age < 19:
                     ageIndex = '18';
                     break;
-                case ( age > 18 && age < 31):
+                case  age > 18 && age < 31:
                     ageIndex = '30';
                     break;
-                case ( age > 30 && age < 51):
+                case  age > 30 && age < 51:
                     ageIndex = '50';
                     break;
-                case ( age > 50 && age < 71):
+                case  age > 50 && age < 71:
                     ageIndex = '70';
                     break;
                 default:
