@@ -24,7 +24,6 @@ $(function () {
         },
 
         startAnalysis: function () {
-            console.log( "start analysis");
             console.log( app.bmiData );
             console.log( app.nutritionData );
             // test for needed data

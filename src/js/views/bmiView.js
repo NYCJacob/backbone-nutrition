@@ -70,8 +70,8 @@ $(function () {
                 },
                 // data request needs to be JSON per api docs
                 data: JSON.stringify(urlData)
-            }).done(function( data ){
-                // data is a json object returned from api
+            }).done(function( data ){  // data is a json object returned from api
+
                 self.render(data);
             });  // done promise
         },
