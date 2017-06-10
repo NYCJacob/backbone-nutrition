@@ -81,6 +81,7 @@ $(function () {
         // preRender finds EER to render with BMI data
         // no api for EER was found so created the rda objects  :(
         preRender: function ( data ) {
+            var self = this;
             // EER is the calories requirement which based factoring in activity level
             var EER = 0;
             console.log( data );
@@ -96,7 +97,7 @@ $(function () {
             var ageIndex;
 
             // find age slot
-            switch (age) {
+            switch ( true ) {
                 case age > 75 :
                     ageIndex = '76';
                     break;

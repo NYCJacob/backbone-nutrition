@@ -154,7 +154,7 @@
         <!--bmi -->
         <div class="row collapse" id="bmi-controls">
             <div class="col-sm-12" id="bmi-view">
-                <div class="row">
+                <div class="row ">
                     <div class="col-sm-12">
                         <h4>BMI/EER</h4>
                         <form id="bmi-search">
@@ -212,7 +212,9 @@
         <li>Your BMI is <%= bmi.value %>.  Normal BMI is between 18 and 25.</li>
         <li>Your ideal weight is <%= ideal_weight %> </li>
         <li>Your BMR is <%= bmr.value %>.  This is the approximate amount of calories you would burn if
-        you did nothing all day.  If you eat more calories than you burn you gain weight. </li>
+        you did nothing all day. </li>
+        <li>Approximate calories burned in a day based on activity level is <%= eer %></li>
+        <li><strong>If you eat more calories than you burn you gain weight.</strong></li>
     </ul>
 
 </script>
