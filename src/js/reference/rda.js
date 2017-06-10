@@ -5,7 +5,7 @@
 // rda= recommended daily allowance of nutrients
 // data from the USDA
 // https://www.nal.usda.gov/sites/default/files/fnic_uploads//recommended_intakes_individuals.pdf
-
+    //todo: probably should put these in the app object
     //todo: make a microservice api for this??
 var rda = [];
 

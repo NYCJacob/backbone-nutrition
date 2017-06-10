@@ -75,16 +75,62 @@ $(function () {
                 self.preRender( data );   // need to get more data before rendering
             }).fail(function () {
                 console.log( 'ajax fail');
-            });  // done promise
+            }); // ajax end
         },
 
+        // preRender finds EER to render with BMI data
+        // no api for EER was found so created the rda objects  :(
         preRender: function ( data ) {
+            // EER is the calories requirement which based factoring in activity level
+            var EER = 0;
             console.log( data );
             // activity level is not sent to nutritionix but used for rda object value lookup
             var activeLevel = this.$( '#activity-level' ).val();
             console.log( activeLevel );
             // look up EER object
 
+            var gender = this.$('#life-gender').val();   // could not find a way to pass this value from ajax
+
+            var age = parseInt( this.$('#life-age').val() ) ;
+            var ageIndex = 0;
+
+            // find age slot
+            switch (age) {
+                case ( age > 75 ):
+                    ageIndex = '76';
+                    break;
+                case ( age <= 13 ):
+                    ageIndex = '13';
+                    break;
+                case ( age > 13 && age < 19):
+                    ageIndex = '18';
+                    break;
+                case ( age > 18 && age < 31):
+                    ageIndex = '30';
+                    break;
+                case ( age > 30 && age < 51):
+                    ageIndex = '50';
+                    break;
+                case ( age > 50 && age < 71):
+                    ageIndex = '70';
+                    break;
+                default:
+                    console.log( 'age switch error');
+            }
+
+            // find gender
+            if ( gender === 'f' ) {
+                EER = femalesEER[ ageIndex ][activeLevel];
+            } else if ( gender === 'm'){
+                EER = malesEER[ ageIndex ][activeLevel];
+            } else {
+                console.log( "gender error" );
+            }
+
+            //  append EER to BMI data object
+            data.eer = EER;
+            // send revised data object to render
+            self.render( data );
         }
 
     });
