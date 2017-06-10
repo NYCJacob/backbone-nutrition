@@ -71,17 +71,20 @@ $(function () {
                 // data request needs to be JSON per api docs
                 data: JSON.stringify(urlData)
             }).done(function( data ){  // data is a json object returned from api
-
-                self.render(data);
+                // self.render(data);
+                self.preRender( data );   // need to get more data before rendering
+            }).fail(function () {
+                console.log( 'ajax fail');
             });  // done promise
         },
 
-        searchSuccess: function () {
-            console.log('request success');
-        },
+        preRender: function ( data ) {
+            console.log( data );
+            // activity level is not sent to nutritionix but used for rda object value lookup
+            var activeLevel = this.$( '#activity-level' ).val();
+            console.log( activeLevel );
+            // look up EER object
 
-        searchError: function () {
-            console.log('request error')
         }
 
     });

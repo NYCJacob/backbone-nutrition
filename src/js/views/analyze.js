@@ -26,8 +26,7 @@ $(function () {
         startAnalysis: function () {
             console.log( app.bmiData );
             console.log( app.nutritionData );
-            // test for needed data
-
+            // test for needed data if missing send msg to user
             if  ( _.isEmpty( app.bmiData ) && _.isEmpty( app.nutritionData ) ) {
                 app.messenger.showMessage( 'There is no BMI data nor nutritional data.  Both are needed.' );
             } else if ( _.isEmpty( app.bmiData ) ) {
@@ -35,6 +34,8 @@ $(function () {
             } else if ( _.isEmpty( app.nutritionData ) ) {
                 app.messenger.showMessage( 'There is no nutrition data.' );
             }
+
+
 
         }
 

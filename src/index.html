@@ -156,7 +156,7 @@
             <div class="col-sm-12" id="bmi-view">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4>BMI/Life Expectancy</h4>
+                        <h4>BMI/EER</h4>
                         <form id="bmi-search">
                             <div class="form-group">
                                 <label for="bmi-height">Enter Height (inches)</label>
@@ -175,6 +175,14 @@
                                 <select id="life-gender" form="bmi-search">
                                     <option value="m">Male</option>
                                     <option value="f" selected>Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="activity-level">Choose Activity Level</label>
+                                <select name="activity" id="activity-level">
+                                    <option value="0">Sedentary</option>
+                                    <option value="1">Moderate</option>
+                                    <option value="2">Active</option>
                                 </select>
                             </div>
                             <button type="submit" id="submitBMI" class="btn btn-primary">Submit</button>
