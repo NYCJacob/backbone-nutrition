@@ -186,12 +186,12 @@
                             <div id="bmi-buttons">
                                 <button type="submit" id="submitBMI" class="btn btn-primary">Submit</button>
                                 <button type="submit" id="saveBMI" class="btn btn-success" disabled>Save</button>
+                                <button type="submit" id="historyBMI" class="btn btn-success">View Saved</button>
                             </div>
                         </form>
                     </div>
                     <div class="row">
                         <div class="col-sm-12" >
-                            <h4>BMI Results</h4>
                             <div id="bmi-results">
 
                             </div>
@@ -207,6 +207,7 @@
 
 <!--underscore templates for views-->
 <script id="bmiTemplate" type="text/template">
+    <h4>BMI Results</h4>
     <ul>
         <li><%= bmi.status %> </li>
         <li><%= bmi.risk %> </li>

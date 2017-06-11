@@ -5,6 +5,7 @@
 app.SavedBMI = Backbone.Model.extend({
 
     defaults: {
+        timestamp : '',
         weight : '',
         height : '',
         // age : '',     // age not returned by bmi although needed in ajax request to return values

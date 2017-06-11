@@ -17,15 +17,14 @@ $(function () {
 
         events: {
             'click button#submitBMI': 'searchBMI',
-            'click button#saveBMI': 'saveBMI'
+            'click button#saveBMI': 'saveBMI',
+            'click button#historyBMI': 'historyBMI'
         },
 
         initialize: function () {
             console.log( this.collection );
             this.$bmiResults = this.$( '#bmi-results' );
             this.$bmiSave = this.$( '#saveBMI' );
-            // get local storage data
-            this.collection.fetch();
         },
 
         // render bmi
@@ -48,11 +47,19 @@ $(function () {
             return this;
             },
 
+        // did not want to create another view object and can only use one template per view
+        // therefore created html in method
+        historyBMI: function (e) {
+            e.preventDefault();
+
+        },
+
         saveBMI: function (e) {
             e.preventDefault();
             console.log( 'saveBMI' );
             // save to collection (local storage)
             var currentBMI = {
+                timestamp : Math.floor( Date.now()/1000 ),
                 weight : Math.ceil( app.bmiData.weight.lb ) ,    // rounding up for kg-lb conversion error
                 height : app.bmiData.height[ 'ft-in' ],
                 bmi_prime : app.bmiData.bmi.prime,
@@ -62,14 +69,11 @@ $(function () {
                 bmr_value : app.bmiData.bmr.value,
                 ideal_weight : app.bmiData.ideal_weight
             };
-
             this.collection.create( currentBMI );
-
         },
 
         searchBMI: function (e) {
             e.preventDefault();
-
             var self = this;
             // using ajax rather than another collection.fetch call because of non REST api
 
