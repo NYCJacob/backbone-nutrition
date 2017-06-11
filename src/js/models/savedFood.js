@@ -21,7 +21,7 @@ app.SavedFood = Backbone.Model.extend({
             nf_serving_size_unit : '',
         // meal_type is not from nutrinix but will come from user input
             meal_type: '',
-        servings: ''
+        servings: '1'
     }
 
 });
