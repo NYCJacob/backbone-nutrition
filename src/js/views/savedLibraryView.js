@@ -24,9 +24,6 @@ $(function () {
             this.modelCount = 0;
             //  array to stored saved food nutritionix index to prevent duplicate entries
             this.savedIndex = [];
-            // this.collection = new app.savedCollection();
-            // this.collection = app.savedCollection;   // savedCollection initialized in app.js
-            //TODO: not sure why this.collection seems to work when collection: not in constructor
             this.listenTo(this.collection, 'add update change', this.render);
             // get localstorage data
             this.collection.fetch();
