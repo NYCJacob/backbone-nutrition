@@ -9,15 +9,23 @@ $(function () {
     app.BmiView = Backbone.View.extend({
         el: '#bmi-view',
 
-        // model: app.SavedBMI,
+        model: app.SavedBMI,
+
         template: _.template( $('#bmiTemplate').html() ),
 
+        collection: app.bmiCollection,
+
         events: {
-            'click button#submitBMI': 'searchBMI'
+            'click button#submitBMI': 'searchBMI',
+            'click button#saveBMI': 'saveBMI'
         },
 
         initialize: function () {
-            this.$bmiResults = this.$( '#bmi-results');
+            console.log( this.collection );
+            this.$bmiResults = this.$( '#bmi-results' );
+            this.$bmiSave = this.$( '#saveBMI' );
+            // get local storage data
+            this.collection.fetch();
         },
 
         // render bmi
@@ -40,11 +48,30 @@ $(function () {
             return this;
             },
 
+        saveBMI: function (e) {
+            e.preventDefault();
+            console.log( 'saveBMI' );
+            // save to collection (local storage)
+            var currentBMI = {
+                weight : Math.ceil( app.bmiData.weight.lb ) ,    // rounding up for kg-lb conversion error
+                height : app.bmiData.height[ 'ft-in' ],
+                bmi_prime : app.bmiData.bmi.prime,
+                bmi_risk : app.bmiData.bmi.risk,
+                bmi_status : app.bmiData.bmi.status,
+                bmi_value : app.bmiData.bmi.value,
+                bmr_value : app.bmiData.bmr.value,
+                ideal_weight : app.bmiData.ideal_weight
+            };
+
+            this.collection.create( currentBMI );
+
+        },
+
         searchBMI: function (e) {
             e.preventDefault();
 
             var self = this;
-            // using ajax rather than another collection.fetch call
+            // using ajax rather than another collection.fetch call because of non REST api
 
             // Make JSON request to https://bmi.p.mashape.com/
             // could only get api to work using default metric values
@@ -58,7 +85,8 @@ $(function () {
                 "height":{"value": userHeight,"unit":"cm"},
                 "sex": userGender, "age": userAge};
 
-            // for json POST request see http://stackoverflow.com/questions/12693947/jquery-ajax-how-to-send-json-instead-of-querystring#12693986
+            // for json POST request see
+            // http://stackoverflow.com/questions/12693947/jquery-ajax-how-to-send-json-instead-of-querystring#12693986
             $.ajax({
                 type: 'POST',
                 url: bmiUrl,
@@ -131,6 +159,11 @@ $(function () {
 
             //  append EER to BMI data object
             data.eer = EER;
+
+            // remove disable attribute of save button
+            //  see this SO for extensive explanation
+            // https://stackoverflow.com/questions/4702000/toggle-input-disabled-attribute-using-jquery#9489400
+            this.$bmiSave.attr('disabled', false);
             // send revised data object to render
             self.render( data );
         }

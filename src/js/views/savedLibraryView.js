@@ -7,7 +7,6 @@ var app = app || {};
 // wrap within jQuery
 $(function () {
     app.SavedLibraryView = Backbone.View.extend({
-        // el: '#saved-items',
         el: '#saved-container',
 
         model: app.SavedFood,
@@ -15,8 +14,8 @@ $(function () {
         template: _.template( $('#savedFooterTemplate').html() ),
 
         collection: app.savedCollection,
-        events: {
-        },
+
+        events: { },
 
         initialize: function () {
             this.$savedItems = this.$('#saved-items');
@@ -28,10 +27,6 @@ $(function () {
             // get localstorage data
             this.collection.fetch();
         },
-
-        nf_total_fat : '',
-        nf_total_carbohydrate : '',
-        nf_protein : '',
 
         // render
         render: function () {

@@ -13,7 +13,6 @@ $(function () {
         localStorage: new Backbone.LocalStorage('user-bmi')
 
     });
-
     app.bmiCollection = new app.BmiCollection();  //collection for bmi mainly to use localstorage
 
 });

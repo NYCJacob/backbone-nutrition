@@ -9,6 +9,7 @@ var app = app || {};
 $(function () {
     // initialize collections
     app.savedCollection = new app.SavedCollection();  // collection to hold user saved items
+
     // initial search collection instantiated on fetch in view
 
     // initialize views

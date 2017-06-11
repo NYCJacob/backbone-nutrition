@@ -183,7 +183,10 @@
                                     <option value="active">Active</option>
                                 </select>
                             </div>
-                            <button type="submit" id="submitBMI" class="btn btn-primary">Submit</button>
+                            <div id="bmi-buttons">
+                                <button type="submit" id="submitBMI" class="btn btn-primary">Submit</button>
+                                <button type="submit" id="saveBMI" class="btn btn-success" disabled>Save</button>
+                            </div>
                         </form>
                     </div>
                     <div class="row">
@@ -323,6 +326,9 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/models/foodSearch.js"></script>
 <script src="js/models/savedFood.js"></script>
+<script src="js/models/bmiSearch.js"></script>
+<script src="js/collections/bmiCollection.js"></script>
+
 <script src="js/views/startView.js"></script>
 <script src="js/views/bmiView.js"></script>
 <script src="js/views/food.js"></script>
@@ -333,6 +339,7 @@
 <script src="js/views/analyze.js"></script>
 <script src="js/collections/libraryCollection.js"></script>
 <script src="js/collections/savedItems.js"></script>
+
 <script async src="js/reference/rda.js"></script>
 
 <script src="js/app.js"></script>
