@@ -21,6 +21,10 @@ body {
     border: 1px solid transparent;
 }
 
+#main-menu-toggle {
+
+}
+
 #searchResults {
     overflow-y: auto;
     /*max-height: 100vh;*/
