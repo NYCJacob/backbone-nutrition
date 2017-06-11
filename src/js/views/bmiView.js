@@ -51,7 +51,7 @@ $(function () {
         // therefore created html in method
         historyBMI: function (e) {
             e.preventDefault();
-
+            new app.BmiHistory();
         },
 
         saveBMI: function (e) {

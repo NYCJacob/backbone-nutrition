@@ -197,6 +197,31 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm-12" >
+                            <div id="bmi-history" class="display-none">
+                                <div id="bmi-table">
+                                    <table class="table table-sm table-responsive">
+                                        <tr>
+                                            <thead>
+                                            <tr>
+                                                <th>Date</th><th>weight</th><th>bmi</th><th>bmi status</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="bmi-tbody">
+
+                                            </tbody>
+                                        </tr>
+
+                                    </table>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -288,6 +313,10 @@
     </footer>
 </script>
 
+<script id="bmiHistoryTemplate" type="text/template">
+<tr><td> </td><td> </td><td> </td><td> </td></tr>
+</script>
+
 <script id="analyzeTemplate" type="text/template">
     <div>
         <p><%= weightMsg %></p>
@@ -332,6 +361,8 @@
 
 <script src="js/views/startView.js"></script>
 <script src="js/views/bmiView.js"></script>
+<script src="js/views/bmiHistory.js"></script>
+
 <script src="js/views/food.js"></script>
 <script src="js/views/library.js"></script>
 <script src="js/views/savedFoodsView.js"></script>
