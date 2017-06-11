@@ -13,18 +13,14 @@ $(function () {
 
         template: _.template( $('#bmiTemplate').html() ),
 
-        collection: app.bmiCollection,
+        // collection: app.bmiCollection,
 
         events: {
-            'click button#submitBMI': 'searchBMI',
-            'click button#saveBMI': 'saveBMI',
-            'click button#historyBMI': 'historyBMI'
+            'click button#submitBMI': 'searchBMI'
         },
 
         initialize: function () {
-            console.log( this.collection );
             this.$bmiResults = this.$( '#bmi-results' );
-            this.$bmiSave = this.$( '#saveBMI' );
         },
 
         // render bmi
@@ -119,11 +115,7 @@ $(function () {
             console.log( data );
             // activity level is not sent to nutritionix but used for rda object value lookup
             var activeLevel = this.$( '#activity-level' ).val();
-            console.log( activeLevel );
-            // look up EER object
-
             var gender = this.$('#life-gender').val();   // could not find a way to pass this value from ajax
-
             var age = parseInt( this.$('#life-age').val() ) ;
             // this will be the new age value for the eer object age index
             var ageIndex;
@@ -164,10 +156,6 @@ $(function () {
             //  append EER to BMI data object
             data.eer = EER;
 
-            // remove disable attribute of save button
-            //  see this SO for extensive explanation
-            // https://stackoverflow.com/questions/4702000/toggle-input-disabled-attribute-using-jquery#9489400
-            this.$bmiSave.attr('disabled', false);
             // send revised data object to render
             self.render( data );
         }
