@@ -97,10 +97,8 @@
                     </h5>
                 </div>
                 <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
-                    <div class="card-block">
-                        <div>
-                            This will analyze results.
-                        </div>
+                    <div class="card-block" id="analyzeMsg">
+
                     </div>
                 </div>
             </div>
@@ -284,6 +282,22 @@
         <span>Fat: <%= fat %></span>
         <span>Protein: <%= protein %></span>
     </footer>
+</script>
+
+<script id="analyzeTemplate" type="text/template">
+    <div>
+        <p><%= weightMsg %></p>
+        <p>Your estimated expended daily calories is <%= eer %>, and your calories eaten is <%= cals %>.</p>
+        <blockquote class="blockquote"><p>Despite all the diet strategies out there, weight management still comes down to the calories you take in versus
+            those you burn off.  Fad diets may promise you that avoiding carbs or eating a mountain of grapefruit is the
+            secret to weight loss, but it really comes down to eating fewer calories if you want to shed pounds.</p>
+        <p class="mb-0">Because 3,500 calories equals about 1 pound (0.45 kilogram) of fat, you need to burn 3,500 calories more than
+            you take in to lose 1 pound.  So, in general, if you cut 500 calories from your typical diet each day, you'd lose about 1 pound a week
+            (500 calories x 7 days = 3,500 calories).</p></blockquote>
+        <footer class="blockquote-footer">Source: <a href="http://www.mayoclinic.org/healthy-lifestyle/weight-loss/in-depth/calories/art-20048065">Mayo Clinic Website</a>
+        </footer>
+    </div>
+
 </script>
 
 

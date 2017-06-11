@@ -47,7 +47,7 @@ $(function () {
 
             this.collection.forEach(function (item) {
                 // https://stackoverflow.com/questions/10003683/javascript-get-number-from-string
-                var servingsInt = item.get("servings").match(/\d+/)[0]
+                var servingsInt = item.get("servings").match(/\d+/)[0];
                 totalCals +=  parseInt( ( item.get("nf_calories") * servingsInt ), 10);
                 totalFat +=  parseInt( ( item.get("nf_total_fat") * servingsInt ), 10);
                 totalCarbs +=  parseInt( ( item.get("nf_total_carbohydrate") * servingsInt ), 10);
