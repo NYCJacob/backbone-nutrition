@@ -31,6 +31,8 @@ collapsed.
 - only basic client-side form validation but it does use Bootstrap v4 form error classes in the BMI view.  
 I could not find a way to make any of the form validation plugins work within Backbone.  The Backbone
 validation plugin requires a model which is not being used in the BMI view because of the poor api.
+- select elements not validating on client side because not blur event or easy work around.
+- bmi 'submit' will send empty form because required attribute will not work here because not using submit event 
 
 ## ps
 - as I was finishing up this project I saw this article in the New York Times  

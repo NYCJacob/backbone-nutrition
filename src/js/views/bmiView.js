@@ -115,6 +115,8 @@ $(function () {
             }
         },
 
+        // saveBMI is not used now and really should be only be in the bmi-localstorage fork,
+        // but I am leaving it for now in case I get a quick idea I want to test.  See README for more details
         saveBMI: function (e) {
             e.preventDefault();
             console.log( 'saveBMI' );
@@ -164,10 +166,11 @@ $(function () {
                 // data request needs to be JSON per api docs
                 data: JSON.stringify(urlData)
             }).done(function( data ){  // data is a json object returned from api
-                // self.render(data);
                 self.preRender( data );   // need to get more data before rendering
             }).fail(function () {
-                console.log( 'ajax fail');
+                // console.log( 'ajax fail');
+                var ajaxFail = 'There was a problem with the request, please check your answers.';
+                app.messenger.showMessage( ajaxFail );
             }); // ajax end
         },
 
