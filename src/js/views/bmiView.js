@@ -19,6 +19,7 @@ $(function () {
         events: {
             'click button#submitBMI': 'searchBMI',
             'blur input#bmi-height': 'validateHeight',
+            // 'change input#bmi-height': 'resetValidation',
             'blur input#bmi-weight': 'validateWeight',
             'blur input#life-age': 'validateAge',
             'blur input#lifeGender': 'validateGender',
@@ -58,6 +59,13 @@ $(function () {
             this.$bmiResults.html(this.template( data ));
             return this;
             },
+
+        //todo: input validate methods probably should be toggles so they can be cleared easier??
+        // https://stackoverflow.com/questions/5680807/backbone-js-events-knowing-what-was-clicked#5680837
+
+        resetValidation: function ( ev ) {
+            console.log($(ev.target).attr('name'));
+        },
 
         validateHeight: function () {
             var heightRegex = /^[0-9]{2}$/g;
