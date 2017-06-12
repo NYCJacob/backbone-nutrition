@@ -112,7 +112,7 @@ $(function () {
             var self = this;
             // EER is the calories requirement which based factoring in activity level
             var EER = 0;
-            console.log( data );
+            // console.log( data );
             // activity level is not sent to nutritionix but used for rda object value lookup
             var activeLevel = this.$( '#activity-level' ).val();
             var gender = this.$('#life-gender').val();   // could not find a way to pass this value from ajax

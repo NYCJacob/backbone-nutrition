@@ -18,6 +18,9 @@ $(function () {
     app.savedLibraryView = new app.SavedLibraryView({collection: app.savedCollection});
     app.analyzeView = new app.AnalyzeView();
 
+    // initialize bootstrap tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+
     // debug code
     // app.savedCollection.on('all',function(eventName) {
     //     console.log(eventName);
