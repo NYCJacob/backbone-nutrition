@@ -16,8 +16,7 @@ Javascript objects I where I had to enter a lot of data because there was no api
 I hope to explore this app using another framework and perhaps set up some micro api servers.
 
 ## Installation
-currently all files are in src/ and you need to load index.html on a server.  A basic form submit should display 
-results in the results div.
+src/ contains the development code and /dist contains minified distribution code.
 
 ## Issues
 - BMI api not very robust; need to to metric-standard conversions resulting in rounding errors
@@ -29,3 +28,10 @@ was abandoned although the bmi data with sortable timestamp was completed and re
 - saved food items all display with details resulting in only a few items showing on most displays.  
 I could not find a way to have the Underscore template just set the most recent item as opened and the others
 collapsed.
+- only basic client-side form validation but it does use Bootstrap v4 form error classes in the BMI view.  
+I could not find a way to make any of the form validation plugins work within Backbone.  The Backbone
+validation plugin requires a model which is not being used in the BMI view because of the poor api.
+
+## ps
+- as I was finishing up this project I saw this article in the New York Times  
+More Than 10 Percent of World’s Population Is Obese, Study Finds https://nyti.ms/2tcPubT

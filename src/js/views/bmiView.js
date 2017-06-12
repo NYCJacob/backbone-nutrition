@@ -15,12 +15,28 @@ $(function () {
 
         // collection: app.bmiCollection,
 
+        // see https://stackoverflow.com/questions/19503262/backbone-js-and-form-input-blur
         events: {
-            'click button#submitBMI': 'searchBMI'
+            'click button#submitBMI': 'searchBMI',
+            'blur input#bmi-height': 'validateHeight',
+            'blur input#bmi-weight': 'validateWeight',
+            'blur input#life-age': 'validateAge',
+            'blur input#lifeGender': 'validateGender',
+            'blur input#activity-level': 'validateActivity'
         },
 
         initialize: function () {
             this.$bmiResults = this.$( '#bmi-results' );
+            this.$bmiHeight = this.$( '#bmi-height' );
+            this.$heightGroup = this.$( '#heightGroup' );
+            this.$bmiWeight = this.$( '#bmi-weight' );
+            this.$weightGroup = this.$( '#weightGroup' );
+            this.$lifeAge = this.$( '#life-age' );
+            this.$ageGroup = this.$( '#ageGroup' );
+            this.$lifeGender = this.$( '#lifeGender' );
+            this.$genderGroup = this.$( '#genderGroup' );
+            this.$activity = this.$( '#activity' );
+            this.$activityGroup = this.$( '#activityGroup' );
         },
 
         // render bmi
@@ -43,11 +59,60 @@ $(function () {
             return this;
             },
 
-        // did not want to create another view object and can only use one template per view
-        // therefore created html in method
-        historyBMI: function (e) {
-            e.preventDefault();
+        validateHeight: function () {
+            var heightRegex = /^[0-9]{2}$/g;
+            if ( this.$bmiHeight.val().match( heightRegex )  ) {
+                this.$heightGroup.addClass( 'has-success');
+                this.$bmiHeight.addClass( 'form-control-success' );
+            } else {
+                this.$heightGroup.addClass( 'has-danger');
+                this.$bmiHeight.addClass( 'form-control-danger' );
+            }
+        },
 
+        validateWeight: function () {
+            var weightRegex = /^[0-9]{3}$/g;
+            var weightInput = this.$bmiWeight.val();
+            if ( weightInput.match( weightRegex ) ) {
+                this.$weightGroup.addClass( 'has-success');
+                this.$bmiWeight.addClass( 'form-control-success' );
+            } else {
+                this.$weightGroup.addClass( 'has-danger');
+                this.$bmiWeight.addClass( 'form-control-danger' );
+            }
+        },
+
+        validateAge: function () {
+            var ageRegex = /^[0-9]{2}$/g;
+            if ( this.$lifeAge.val().match( ageRegex )  ) {
+                this.$ageGroup.addClass( 'has-success');
+                this.$lifeAge.addClass( 'form-control-success' );
+            } else {
+                this.$ageGroup.addClass( 'has-danger');
+                this.$lifeAge.addClass( 'form-control-danger' );
+            }
+        },
+
+        validateGender: function () {
+            var genderRegex = /^(f|m){1}$/g;
+            if ( this.$lifeGender.val().match( genderRegex )  ) {
+                this.$genderGroup.addClass( 'has-success');
+                this.$lifeGender.addClass( 'form-control-success' );
+            } else {
+                this.$genderGroup.addClass( 'has-danger');
+                this.$lifeGender.addClass( 'form-control-danger' );
+            }
+        },
+
+        validateActivity: function () {
+            var activityRegex = /^(sedentary|moderate|active)$/g;
+            if ( this.$activity.val().match( activityRegex )  ) {
+                this.$activityGroup.addClass( 'has-success');
+                this.$activity.addClass( 'form-control-success' );
+            } else {
+                this.$activityGroup.addClass( 'has-danger');
+                this.$activity.addClass( 'form-control-danger' );
+            }
         },
 
         saveBMI: function (e) {
