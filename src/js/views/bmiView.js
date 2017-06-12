@@ -35,7 +35,7 @@ $(function () {
             this.$ageGroup = this.$( '#ageGroup' );
             this.$lifeGender = this.$( '#lifeGender' );
             this.$genderGroup = this.$( '#genderGroup' );
-            this.$activity = this.$( '#activity' );
+            this.$activity = this.$( '#activity-level' );
             this.$activityGroup = this.$( '#activityGroup' );
         },
 
@@ -64,9 +64,11 @@ $(function () {
             if ( this.$bmiHeight.val().match( heightRegex )  ) {
                 this.$heightGroup.addClass( 'has-success');
                 this.$bmiHeight.addClass( 'form-control-success' );
+                return true;
             } else {
                 this.$heightGroup.addClass( 'has-danger');
                 this.$bmiHeight.addClass( 'form-control-danger' );
+                return false;
             }
         },
 
@@ -76,9 +78,11 @@ $(function () {
             if ( weightInput.match( weightRegex ) ) {
                 this.$weightGroup.addClass( 'has-success');
                 this.$bmiWeight.addClass( 'form-control-success' );
+                return true;
             } else {
                 this.$weightGroup.addClass( 'has-danger');
                 this.$bmiWeight.addClass( 'form-control-danger' );
+                return false;
             }
         },
 
@@ -87,9 +91,11 @@ $(function () {
             if ( this.$lifeAge.val().match( ageRegex )  ) {
                 this.$ageGroup.addClass( 'has-success');
                 this.$lifeAge.addClass( 'form-control-success' );
+                return true;
             } else {
                 this.$ageGroup.addClass( 'has-danger');
                 this.$lifeAge.addClass( 'form-control-danger' );
+                return false;
             }
         },
 
@@ -98,9 +104,11 @@ $(function () {
             if ( this.$lifeGender.val().match( genderRegex )  ) {
                 this.$genderGroup.addClass( 'has-success');
                 this.$lifeGender.addClass( 'form-control-success' );
+                return true;
             } else {
                 this.$genderGroup.addClass( 'has-danger');
                 this.$lifeGender.addClass( 'form-control-danger' );
+                return false;
             }
         },
 
@@ -109,9 +117,11 @@ $(function () {
             if ( this.$activity.val().match( activityRegex )  ) {
                 this.$activityGroup.addClass( 'has-success');
                 this.$activity.addClass( 'form-control-success' );
+                return true;
             } else {
                 this.$activityGroup.addClass( 'has-danger');
                 this.$activity.addClass( 'form-control-danger' );
+                return false;
             }
         },
 
@@ -147,6 +157,19 @@ $(function () {
             var userHeight = (this.$('#bmi-height').val() * 2.54);
             var userAge = this.$('#life-age').val();
             var userGender = this.$('#life-gender').val();
+            //  check element values on submit button click event to cover
+            // this covers when empty form-no blur event and select elements
+            var weightValid = this.validateWeight();
+            var heightValid = this.validateHeight();
+            var ageValid = this.validateAge();
+            var genderValid = this.validateGender();
+            var activityValid = this.validateActivity();
+            var onClickErrMsg = "Please check your answers.";
+            if ( weightValid === false | heightValid === false | ageValid === false | genderValid === false | activityValid === false ){
+                app.messenger.showMessage( onClickErrMsg );
+                return;
+            }
+
             var urlData =  {
                 "weight":{"value": userWeight,"unit":"kg"},
                 "height":{"value": userHeight,"unit":"cm"},

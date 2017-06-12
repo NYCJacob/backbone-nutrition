@@ -78,7 +78,8 @@ $(function () {
         },
 
         searchError: function () {
-            console.log('request error')
+            var nutritionxFail = 'There was a problem with the request, please try again.';
+            app.messenger.showMessage( nutritionxFail );
         }
 
     });
