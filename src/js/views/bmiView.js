@@ -18,6 +18,7 @@ $(function () {
         // see https://stackoverflow.com/questions/19503262/backbone-js-and-form-input-blur
         events: {
             'click button#submitBMI': 'searchBMI',
+            'click button#bmi-head-btn': 'toggleBmiForm',
             'blur input#bmi-height': 'validateHeight',
             // 'change input#bmi-height': 'resetValidation',
             'blur input#bmi-weight': 'validateWeight',
@@ -38,6 +39,7 @@ $(function () {
             this.$genderGroup = this.$( '#genderGroup' );
             this.$activity = this.$( '#activity-level' );
             this.$activityGroup = this.$( '#activityGroup' );
+            this.$bmiSearch = this.$( '#bmi-search' );
         },
 
         // render bmi
@@ -262,8 +264,23 @@ $(function () {
             //  append EER to BMI data object
             data.eer = EER;
 
+            // check media size to hide form if too small
+            // https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries
+            // bootstrap col-sm is below 768px
+            var mediaQueryList = window.matchMedia("(max-width: 767px)");
+            if (mediaQueryList.matches) {
+                /* The viewport is currently under 768px */
+                self.$bmiSearch.hide("slow");  // hide form to give results text room on mobile
+                // remove button disabled attribute so user can show form again
+                $('#bmi-head-btn').removeAttr('disabled');
+            }
+
             // send revised data object to render
             self.render( data );
+        },
+
+        toggleBmiForm: function () {
+            this.$bmiSearch.toggle("slow");
         }
 
     });
