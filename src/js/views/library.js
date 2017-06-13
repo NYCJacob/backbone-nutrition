@@ -25,10 +25,17 @@ $(function () {
         render: function () {
             // clear prior results
             this.$searchResults.html('');
-            this.collection.each(function (item) {
-                // console.log(item);
-                this.renderFood(item);
-            }, this);
+            // check if food items returned by api
+            if ( this.collection.length === 0 ){  // no results
+                var noResultsMsg = "No items were found, please try another search term.";
+                app.messenger.showMessage( noResultsMsg );
+            } else {  // results returned
+                this.collection.each(function (item) {
+                    // console.log(item);
+                    this.renderFood(item);
+                }, this);
+            }
+
         },
 
         // render food item
