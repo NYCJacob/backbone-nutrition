@@ -274,7 +274,6 @@ $(function () {
                 // remove button disabled attribute so user can show form again
                 $('#bmi-head-btn').removeAttr('disabled');
             }
-
             // send revised data object to render
             self.render( data );
         },
