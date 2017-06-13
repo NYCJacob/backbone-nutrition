@@ -19,6 +19,7 @@ I hope to explore this app using another framework and perhaps set up some micro
 src/ contains the development code and /dist contains minified distribution code.
 
 ## Issues
+- no workflow such as gulp implemented. Nothing is compressed or minified etc. 
 - BMI api not very robust; need to to metric-standard conversions resulting in rounding errors
 - Backbone does not permit sharing collections with different views.  This was worked around for the nutrition
 api because one view fetched from api and another from localstorage.  This got more complicated with trying
@@ -33,6 +34,8 @@ I could not find a way to make any of the form validation plugins work within Ba
 validation plugin requires a model which is not being used in the BMI view because of the poor api.
 - select elements not validating on client side because not blur event or easy work around.
 - bmi 'submit' will send empty form because required attribute will not work here because not using submit event 
+- a lot of effort was made to implement client side validation using backbone and bootstrap classes but it was not so easy
+and not yet 100%.
 
 ## ps
 - as I was finishing up this project I saw this article in the New York Times  

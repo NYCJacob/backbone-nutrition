@@ -23,5 +23,5 @@ $(function () {
             return this;
         }
 
-    })
+    });
 });

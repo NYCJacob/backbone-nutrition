@@ -41,7 +41,7 @@ $(function () {
         // update servings
         updateServings: function () {
           var updatedServings = '"'  + this.$('#servings').val() + '"';
-          this.model.save( {servings: updatedServings} )
+          this.model.save( {servings: updatedServings} );
         },
 
         deleteFood: function() {

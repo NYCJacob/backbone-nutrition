@@ -1,0 +1,53 @@
+{
+  "name": "backbone-nutrition",
+  "version": "1.0.0",
+  "description": "Nution and weight loss app using backbone.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NYCJacob/backbone-nutrition.git"
+  },
+  "keywords": [
+    "backbone",
+    "bootstrap",
+    "nutrionix"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.4.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-data": "^1.2.1",
+    "gulp-debug": "^3.0.0",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-if": "^2.0.2",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-newer": "^1.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-replace": "^0.4.3",
+    "gulp-sass": "^3.1.0",
+    "gulp-scss-lint": "^0.4.0",
+    "gulp-serve": "^1.4.0",
+    "gulp-sourcemaps": "^1.12.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-uncss": "^1.0.6",
+    "gulp-useref": "^3.1.2",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
+  },
+  "bugs": {
+    "url": "https://github.com/NYCJacob/backbone-nutrition/issues"
+  },
+  "homepage": "https://github.com/NYCJacob/backbone-nutrition#readme"
+}

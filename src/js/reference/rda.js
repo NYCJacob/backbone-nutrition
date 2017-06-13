@@ -76,4 +76,4 @@ var femalesEER = {
     '70': {sedentary: '1600', moderate: '1800', active: '2000'},
     '75': {sedentary: '1600', moderate: '1800', active: '2000'},
     '76': {sedentary: '1600', moderate: '1800', active: '2000'}
-}
+};
