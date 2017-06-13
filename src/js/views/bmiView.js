@@ -175,7 +175,6 @@ $(function () {
             var onClickErrMsg = "Please check your answers.";
             if ( weightValid === false | heightValid === false | ageValid === false | genderValid === false | activityValid === false ){
                 app.messenger.showMessage( onClickErrMsg );
-                // return;
             }
 
             var urlData =  {
