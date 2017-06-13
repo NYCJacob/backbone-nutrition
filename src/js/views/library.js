@@ -52,6 +52,10 @@ $(function () {
             // sets search term in collect for fetch
             this.collection.searchTerm = $('#search-terms').val();
 
+            // check valid search terms
+            //todo: need a regex to check words without numbers or special char
+
+
             var parameters = {
                 'results': '0:12', // 10 items
                 'fields':  'item_id,' +
