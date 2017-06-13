@@ -161,10 +161,11 @@ $(function () {
             // Make JSON request to https://bmi.p.mashape.com/
             // could only get api to work using default metric values
             var bmiUrl = 'https://bmi.p.mashape.com/';
-            var userWeight = (this.$('#bmi-weight').val() * .45);    // this is a truncated conversion
-            var userHeight = (this.$('#bmi-height').val() * 2.54);
-            var userAge = this.$('#life-age').val();
-            var userGender = this.$('#life-gender').val();
+            // var userWeight = (this.$('#bmi-weight').val() * .45);    // this is a truncated conversion
+            var userWeight = self.$bmiWeight.val();
+            var userHeight = (self.$bmiHeight.val() * 2.54);
+            var userAge = self.$lifeAge.val();
+            var userGender = self.$lifeGender.val();
             //  check element values on submit button click event to cover
             // this covers when empty form-no blur event and select elements
             var weightValid = this.validateWeight();
@@ -178,9 +179,15 @@ $(function () {
             }
 
             var urlData =  {
-                "weight":{"value": userWeight,"unit":"kg"},
-                "height":{"value": userHeight,"unit":"cm"},
-                "sex": userGender, "age": userAge};
+                            "weight":{
+                                "value": userWeight,
+                                "unit":"lb"},
+                            "height":{
+                                "value": userHeight,
+                                "unit":"cm"},
+                            "sex": userGender,
+                            "age": userAge
+                            };
 
             // for json POST request see
             // http://stackoverflow.com/questions/12693947/jquery-ajax-how-to-send-json-instead-of-querystring#12693986
@@ -212,9 +219,10 @@ $(function () {
             var EER = 0;
             // console.log( data );
             // activity level is not sent to nutritionix but used for rda object value lookup
-            var activeLevel = this.$( '#activity-level' ).val();
-            var gender = this.$('#life-gender').val();   // could not find a way to pass this value from ajax
-            var age = parseInt( this.$('#life-age').val() ) ;
+            var activeLevel = self.$activity.val();
+            // age and gender are not returned back from api
+            var gender = self.$lifeGender.val();
+            var age = parseInt( self.$lifeAge.val() ) ;
             // this will be the new age value for the eer object age index
             var ageIndex;
 
