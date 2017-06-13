@@ -7,7 +7,7 @@ var app = app || {};
 // wrap within jQuery $
 $(function () {
     app.BmiView = Backbone.View.extend({
-        el: '#bmi-view',
+        el: '#bmi-controls',
 
         model: app.SavedBMI,
 
