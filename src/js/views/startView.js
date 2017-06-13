@@ -16,7 +16,8 @@ $(function () {
         events: {
             'click button#bmi-start': 'startBMI',
             'click button#food-start': 'startFoodSearch',
-            'click div#main-menu-toggle': 'showMainMenu',
+            'click button#main-menu-toggle': 'showMainMenu',
+            'click span#main-menu-mobile': 'showMainMenu',
             'click div#headingOne': 'clearMsg',
             'click div#headingTwo': 'clearMsg',
             'click div#headingThree': 'clearMsg'

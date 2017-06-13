@@ -21,8 +21,10 @@ body {
     border: 1px solid transparent;
 }
 
-#main-menu-toggle {
-
+@media screen and (max-width: 991px){
+    #main-menu-toggle {
+        display: none;
+    }
 }
 
 #searchResults {
