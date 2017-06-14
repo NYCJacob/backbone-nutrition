@@ -19,13 +19,12 @@ I hope to explore this app using another framework and perhaps set up some micro
 src/ contains the development code and /dist contains minified distribution code.
 
 ## Issues
-- no workflow such as gulp implemented. Nothing is compressed or minified etc. 
-- BMI api not very robust; need to to metric-standard conversions resulting in rounding errors
+- Gulp: compressing and minifiying seems to break the app.  I suspect there are namespace and load order issues. 
+- BMI api not very robust; need to to metric-standard conversions 
 - Backbone does not permit sharing collections with different views.  This was worked around for the nutrition
 api because one view fetched from api and another from localstorage.  This got more complicated with trying
 to display saved bmi data when would fetch both ways to localstorage.  For purposes of this project the feature
 was abandoned although the bmi data with sortable timestamp was completed and remains in the bmi-localstorage branch.
-- need to implement build process
 - saved food items all display with details resulting in only a few items showing on most displays.  
 I could not find a way to have the Underscore template just set the most recent item as opened and the others
 collapsed.
@@ -36,6 +35,9 @@ validation plugin requires a model which is not being used in the BMI view becau
 - bmi 'submit' will send empty form because required attribute will not work here because not using submit event 
 - a lot of effort was made to implement client side validation using backbone and bootstrap classes but it was not so easy
 and not yet 100%.
+- would like to have subtotals of different nutrition amounts and then factor that into analysis recommendation but this
+was not done because of time and the scope of this app as just a demo.  Also, in future would like to incorporation FDA
+data to include such things as food groups which Nutrionix does not have.
 
 ## ps
 - as I was finishing up this project I saw this article in the New York Times  

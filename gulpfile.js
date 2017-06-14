@@ -75,17 +75,18 @@ gulp.task('copy:css', function () {
 });
 
 // html tasks
-gulp.task('replace-min:html', function () {
+// todo: fix: htmlmin seems to break html and concating all vender min files breaks js
+gulp.task('replace:html', function () {
     return gulp.src('src/index.html')
         .pipe(htmlreplace({
-            'css' : 'css/styles.min.css',
-            'js': 'scripts/app.min.js'
+            'css' : 'css/app.min.css',
+            'js01': 'js/app.min.js'
         }))
-        .pipe(plugins.htmlmin({
-            collapseWhitespace: true,
-            removeComments: true,
-            removeEmptyAttributes: true
-        }))
+        // .pipe(plugins.htmlmin({
+        //     collapseWhitespace: true,
+        //     removeComments: true,
+        //     removeEmptyAttributes: true
+        // }))
         .pipe(gulp.dest('dist'))
 });
 
