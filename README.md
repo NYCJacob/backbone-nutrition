@@ -3,7 +3,7 @@ This is a nutrition and health app using Backbone.  It is an optional project fo
 The idea is to get the user to focus on caloric intake.  This is the key to losing weight. 
 
 The purpose is mostly to gain master Backbone but also to explore an app idea I have had for some time.
-There are alot of diet apps out there.  However to loose weight diet is the key and understanding huge
+There are many diet apps out there.  However, to loose weight diet is the key and understanding huge
 amount of calories we eat is key.  The link to the Mayo Clinic in the analysis tab explains this.
 
 Also, I found this government site very similar but has a terrible UX.  It does seem to get food group
