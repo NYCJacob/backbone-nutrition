@@ -4,12 +4,28 @@
 
 var Router = Backbone.Router.extend({
     routes: {
-        "*action" : "default"
+        "*action" : "default",
+        "start" : "startView",
+        "bmi"  :  "startBmi",
+        "search" : "startSearch"
     },
 
     default: function (action) {
         console.log(action);
+    },
+
+    startView: function () {
+        app.startView.showMainMenu();
+    },
+
+    startBmi: function () {
+        app.startView.startBMI();
+    },
+
+    startSearch: function () {
+        app.startView.startFoodSearch();
     }
+
 
 });
 

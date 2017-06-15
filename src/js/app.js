@@ -15,7 +15,7 @@ $(function () {
     // initial search collection instantiated on fetch in view
 
     // initialize views
-    new app.StartView();
+    app.startView = new app.StartView();
     new app.LibraryView();
     app.savedLibraryView = new app.SavedLibraryView({collection: app.savedCollection});
     app.analyzeView = new app.AnalyzeView();
