@@ -82,11 +82,11 @@ gulp.task('replace:html', function () {
             'css' : 'css/app.min.css',
             'js01': 'js/app.min.js'
         }))
-        // .pipe(plugins.htmlmin({
-        //     collapseWhitespace: true,
-        //     removeComments: true,
-        //     removeEmptyAttributes: true
-        // }))
+        .pipe(plugins.htmlmin({
+            collapseWhitespace: true,
+            removeComments: true,
+            removeEmptyAttributes: true
+        }))
         .pipe(gulp.dest('dist'))
 });
 

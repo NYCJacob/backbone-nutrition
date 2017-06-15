@@ -19,7 +19,7 @@ I hope to explore this app using another framework and perhaps set up some micro
 src/ contains the development code and /dist contains minified distribution code.
 
 ## Issues
-- Gulp: compressing and minifiying seems to break the app.  I suspect there are namespace and load order issues. 
+- Gulp: concatenating vendor min files breaks app.  I suspect there are namespace and load order issues. 
 - BMI api not very robust; need to to metric-standard conversions 
 - Backbone does not permit sharing collections with different views.  This was worked around for the nutrition
 api because one view fetched from api and another from localstorage.  This got more complicated with trying

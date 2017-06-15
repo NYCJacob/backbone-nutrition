@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Find Fit Foods</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/app.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<div class="container-fluid" id="app-view">
+    <nav class="row justify-content-between navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span id="main-menu-mobile" class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand col-4" href="#">Find Fit Foods</a>
+        <button id="main-menu-toggle" class="col-md-3 btn btn-sm btn-info collapse">Main Menu</button>
+    </nav>
+
+    <div id="app-message" class="row">
+        <div id="user-message" class="col-sm-12 text-center text-danger">
+        </div>
+    </div>
+
+    <div id="app-hello">
+        <!--this will be the first thing shown to user, allowing user to select how to proceed-->
+        <div id="accordion-hello" role="tablist" aria-multiselectable="true">
+            <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                    <h5 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordion-hello" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Intro
+                        </a>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="card-block">
+                        <p class="card-text">Why is it so hard to loose weight.  We eat too much.  Not matter how much you exercise it is almost never
+                            enough to compensate for the excess calories we consume.  Thus understanding your caloric needs and
+                            caloric intake is the key to weight loss.  The key measure of healthy weight is called the Body Mass Index ("BMI").
+                            Most people in the United States are over the normal range.  Even if they are not obese- and many are- many more people
+                            are still overweight.  This app covers both BMI and caloric analysis to help you learn how to control your diet and lose weight.</p>
+                        <p class="card-text">
+                            It is recommended you find your BMI score first and then use the food search to enter the foods
+                            you might eat in a typical day and see the total calories.  Then see the analysis of your consumption
+                            versus your required caloric consumption and how much you need to lose to reach normal weight.
+                            You can save foods or just search for foods to find nutritional data to help you make healthy choices.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="headingTwo">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion-hello" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Body Mass Index (BMI)
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="card-block">
+                        <div>
+                            <blockquote class="card-blockquote">
+                                <p>
+                                BMI is a person's weight in kilograms divided by the square of height in meters.
+                                BMI does not measure body fat directly, but research has shown that BMI is moderately
+                                correlated with more direct measures of body fat ... Furthermore, BMI appears to be as
+                                strongly correlated with various metabolic and disease outcome as are these more direct measures of body fatness.
+                                In general, BMI is an inexpensive and easy-to-perform method of screening for weight category,
+                                for example underweight, normal or healthy weight, overweight, and obesity.
+                                </p>
+                                <footer>Center for Disease Control ("CDC")
+                                    <cite title="Source Title"><a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html">About Adult BMI</a></cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <button id="bmi-start" class="btn btn-sm btn-primary">Start BMI</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="headingThree">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion-hello" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Search Food Data
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="card-block">
+                        <div>
+                            <p class="card-text">
+                            The food search section allow you to search food data and save selected items.  You should try
+                                saving a typical days food consumption and then see the analysis in the analyze tab.
+                            </p>
+                        </div>
+                        <button id="food-start" class="btn btn-sm btn-primary">Start Food Search/Library</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card" id="analyzeCard">
+                <div class="card-header" role="tab" id="headingFour">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion-hello" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Analyze Data
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="card-block" id="analyzeMsg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="app-ux-container" class="collapse">
+        <div class="collapse" id="search-view">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <form id="search-request" class="form-inline">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter search terms" id="search-terms">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
+                                <a href="http://www.nutritionix.com/api">
+                                    <img src="https://d2eawub7utcl6.cloudfront.net/images/poweredby_nutritionix_api.png" border="0">
+                                </a>
+
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Results</h2>
+                    <div id="searchResults">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="saved-container">
+                        <div id="saved-footer">
+                        </div>
+                        <h2>Saved Food Items</h2>
+                        <div  id="saved-items">
+                            <div id="accordion" role="tablist" aria-multiselectable="true">
+
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--bmi -->
+        <div class="row collapse" id="bmi-controls">
+                    <div class="col-sm-12 col-md-6">
+                        <button id="bmi-head-btn" class="btn btn-primary btn-block" disabled>BMI/EER</button>
+                        <form id="bmi-search">
+                            <div><p class="text-warning"><strong>All fields required.</strong></p></div>
+                            <div class="form-group" id="heightGroup">
+                                <label class="form-control-label" for="bmi-height">Enter Height (inches)</label>
+                                <input class="form-control" type="text" name="bmiHeight" id="bmi-height" required>
+                            </div>
+                            <div class="form-group" id="weightGroup">
+                                <label class="form-control-label" for="bmi-weight">Enter Weight (pounds)</label>
+                                <input class="form-control" type="text" name="bmiWeight" id="bmi-weight" >
+                            </div>
+                            <div class="form-group" id="ageGroup">
+                                <label class="form-control-label" for="life-age">Enter Age</label>
+                                <input class="form-control" type="number" name="lifeAge" id="life-age">
+                            </div>
+                            <div class="form-group" id="genderGroup">
+                                <label class="form-control-label" for="lifeGender">Choose Gender</label>
+                                <select class="form-control" id="lifeGender" form="bmi-search">
+                                    <option>Choose Gender</option>
+                                    <option value="m">Male</option>
+                                    <option value="f">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="activityGroup">
+                                <label class="form-control-label" for="activity-level">Choose Activity Level</label>
+                                <span class="text-warning" data-toggle="tooltip" data-placement="top" data-html="true"
+                                      title="<p>Sedentary= little or no activity</p>
+                                            <p>Moderate= moderate exercise 3-5 times/week</p>
+                                            <p>Active= hard exercise 6+ times/week</p>
+                                            ">
+                                    <strong>?</strong>
+                                </span>
+                                <select class="form-control" name="activity" id="activity-level">
+                                    <option>Select Level</option>
+                                    <option value="sedentary">Sedentary</option>
+                                    <option value="moderate">Moderate</option>
+                                    <option value="active">Active</option>
+                                </select>
+
+                            </div>
+                            <div id="bmi-buttons">
+                                <button id="submitBMI" type="button" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-12 col-md-6" >
+                        <div id="bmi-results">
+
+                        </div>
+                    </div>
+        </div>
+
+    </div>
+</div><!-- /.container -->
+
+<!--underscore templates for views-->
+<script id="bmiTemplate" type="text/template">
+    <h4>BMI Results</h4>
+    <ul>
+        <li><%= bmi.status %> </li>
+        <li><%= bmi.risk %> </li>
+        <li>Your BMI is <%= bmi.value %>.  Normal BMI is between 18 and 25.</li>
+        <li>Your ideal weight is <%= ideal_weight %> </li>
+        <li>Your BMR is <%= bmr.value %>.  This is the approximate amount of calories you would burn if
+        you did nothing all day. </li>
+        <li>Approximate calories burned in a day based on activity level is <%= eer %></li>
+        <li><strong>If you eat more calories than you burn you gain weight.</strong></li>
+    </ul>
+
+</script>
+
+<script id="foodTemplate" type="text/template">
+    <h4> <%= item_name %> </h4>
+    <h5> Brand:  <%= brand_name %> </h5>
+    <ul>
+        <li>Calories: <%= nf_calories %> </li>
+        <li>Total Fat <%= nf_total_fat %> </li>
+        <li>Carbohydrates <%= nf_total_carbohydrate %> </li>
+        <li>Protein <%= nf_protein %> </li>
+        <li>Serving Size <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
+    </ul>
+    <button class="add-food">Add Food</button>
+</script>
+
+<script id="savedFoodTemplate" type="text/template">
+    <div class="card">
+        <div class="card-header" role="tab" id=<%= item_id %>>
+            <h5 class="mb-0">
+                <a class="card-panel" data-toggle="collapse" data-parent="#accordion" href=<%= href %> aria-expanded="true" aria-controls="collapseOne">
+                    <table class="table food-table">
+                        <colgroup>
+                            <col class="column-one">
+                            <col class="column-two">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="food-item_name"><%= item_name %></td> <td class="food-brand_name" >Brand: <%= brand_name %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </a>
+            </h5>
+        </div>
+
+        <div id=<%= divId %> class="collapse show" role="tabpanel" aria-labelledby=<%= headingLabel %>>
+            <div class="card-block">
+                <ul>
+                    <li>Calories: <%= nf_calories %> </li>
+                    <li>Total Fat: <%= nf_total_fat %> </li>
+                    <li>Carbohydrates: <%= nf_total_carbohydrate %> </li>
+                    <li>Protein: <%= nf_protein %> </li>
+                    <li>Serving Size: <%= nf_serving_size_qty %> <%= nf_serving_size_unit %></li>
+                    <li>Servings Eaten:<input type="number" value= <%= servings %> id="servings">   </li>
+                    <li>Meal Type
+                        <select class="meal-type">
+                            <option > <%= meal_type %></option>
+                            <option value="Breakfast" >Breakfast</option>
+                            <option value="Lunch" >Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Snack">Snack</option>
+                        </select>
+                    </li>
+                </ul>
+                <button class="delete-food">Delete</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="savedFooterTemplate" type="text/template">
+    <footer> <span>Totals: </span>
+        <span>Calories: <%= cals %></span>
+        <span>Carbs: <%= carbs %></span>
+        <span>Fat: <%= fat %></span>
+        <span>Protein: <%= protein %></span>
+    </footer>
+</script>
+
+<script id="analyzeTemplate" type="text/template">
+    <div>
+        <p><%= weightMsg %></p>
+        <p>Your estimated expended daily calories is <%= eer %>, and your calories eaten is <%= cals %>.</p>
+        <blockquote class="blockquote"><p>Despite all the diet strategies out there, weight management still comes down to the calories you take in versus
+            those you burn off.  Fad diets may promise you that avoiding carbs or eating a mountain of grapefruit is the
+            secret to weight loss, but it really comes down to eating fewer calories if you want to shed pounds.</p>
+        <p class="mb-0">Because 3,500 calories equals about 1 pound (0.45 kilogram) of fat, you need to burn 3,500 calories more than
+            you take in to lose 1 pound.  So, in general, if you cut 500 calories from your typical diet each day, you'd lose about 1 pound a week
+            (500 calories x 7 days = 3,500 calories).</p></blockquote>
+        <footer class="blockquote-footer">Source: <a href="http://www.mayoclinic.org/healthy-lifestyle/weight-loss/in-depth/calories/art-20048065">Mayo Clinic Website</a>
+        </footer>
+    </div>
+
+</script>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+&lt;!&ndash; IE10 viewport hack for Surface/desktop Windows 8 bug &ndash;&gt;
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+-->
+
+<!--local dev links-->
+<script src="js/vendor/jquery-3.1.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.1.min.js"><\/script>')</script>
+<script src="js/vendor/tether.min.js"></script>
+<script src="js/vendor/underscore-min.js"></script>
+<script src="js/vendor/backbone.min.js"></script>
+<script src="js/vendor/backbone.localStorage.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+
+<!-- build:js01 -->
+<script src="js/models/foodSearch.js"></script>
+<script src="js/models/savedFood.js"></script>
+<script src="js/models/bmiSearch.js"></script>
+<script src="js/views/startView.js"></script>
+<script src="js/views/bmiView.js"></script>
+<script src="js/views/food.js"></script>
+<script src="js/views/library.js"></script>
+<script src="js/views/savedFoodsView.js"></script>
+<script src="js/views/savedLibraryView.js"></script>
+<script src="js/views/userMsg.js"></script>
+<script src="js/views/analyze.js"></script>
+<script src="js/collections/libraryCollection.js"></script>
+<script src="js/collections/savedItems.js"></script>
+<script src="js/routes/router.js"></script>
+
+<script async src="js/reference/rda.js"></script>
+
+<script src="js/app.js"></script>
+<!-- endbuild -->
+</body>
+</html>
