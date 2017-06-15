@@ -40,6 +40,7 @@ $(function () {
 
         clearMsg: function () {
           app.messenger.showMessage('');
+            app.router.navigate("start");
         },
 
 // todo: function to clear out prior views
@@ -49,6 +50,8 @@ $(function () {
             this.$menuIcon.removeClass("collapse");
             this.$appUX.removeClass("collapse");
             this.$bmiControl.removeClass("collapse");
+            // set url
+            app.router.navigate("bmi");
             app.bmiView = new app.BmiView();
         },
 
@@ -57,6 +60,7 @@ $(function () {
             this.$menuIcon.removeClass("collapse");
             this.$appUX.removeClass("collapse");
             this.$searchView.removeClass( "collapse" );
+            app.router.navigate("search");
         },
 
         showMainMenu: function () {
@@ -64,6 +68,7 @@ $(function () {
             this.$appHello.removeClass("collapse");
             this.$appUX.addClass("collapse");
             this.$bmiControl.addClass("collapse");
+            app.router.navigate("start");
         }
     });
 

@@ -26,6 +26,9 @@ $(function () {
         },
 
         startAnalysis: function () {
+            // set url router
+            app.router.navigate("analyze");
+
             var self = this;
             var weightAnalysis;
             var dietAnalysis;

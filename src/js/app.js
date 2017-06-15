@@ -7,6 +7,8 @@ var app = app || {};
 
 // wrap within jQuery $
 $(function () {
+    // initialize url router
+    app.router.navigate("start");
     // initialize collections
     app.savedCollection = new app.SavedCollection();  // collection to hold user saved items
 
@@ -21,9 +23,5 @@ $(function () {
     // initialize bootstrap tooltips
     $('[data-toggle="tooltip"]').tooltip();
 
-    // debug code
-    // app.savedCollection.on('all',function(eventName) {
-    //     console.log(eventName);
-    // });
 
 });

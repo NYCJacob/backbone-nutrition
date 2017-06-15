@@ -97,3 +97,6 @@ gulp.task('clean', function (done) {
         done();
     });
 });
+
+gulp.task('serve:dist', serve('dist'));
+gulp.task('serve:src', serve('src'));
