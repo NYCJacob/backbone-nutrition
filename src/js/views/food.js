@@ -6,6 +6,7 @@
  * Created by jsherman on 3/26/17.
  */
 // site/js/views/book.js
+"use strict";
 
 var app = app || {};
 

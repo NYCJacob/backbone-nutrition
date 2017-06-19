@@ -1,17 +1,16 @@
 /**
  * Created by jsherman on 6/14/17.
  */
+"use strict";
 
 var Router = Backbone.Router.extend({
     routes: {
-        "*action" : "default",
         "start" : "startView",
         "bmi"  :  "startBmi",
         "search" : "startSearch"
     },
 
     default: function (action) {
-        console.log(action);
     },
 
     startView: function () {

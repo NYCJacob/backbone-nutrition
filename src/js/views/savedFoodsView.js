@@ -1,6 +1,8 @@
 /**
  * Created by jsherman on 4/13/17.
  */
+"use strict";
+
 var app = app || {};
 
 // wrap within jQuery $

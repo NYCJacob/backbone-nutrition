@@ -1,6 +1,7 @@
 /**
  * Created by jsherman on 5/1/17.
  */
+"use strict";
 
 var app = app || {};
 

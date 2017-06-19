@@ -3,6 +3,8 @@
  */
 // js/views/app.js
 
+"use strict";
+
 var app = app || {};
 
 // wrap within jQuery $
